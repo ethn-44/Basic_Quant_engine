@@ -7,9 +7,13 @@
 #include <cmath>
 class MonteCarloEngine{
     private:
+    int initial_seed_;
     std::mt19937_64 gen_;
     public:
-    explicit MonteCarloEngine(int seed=42): gen_(seed){}
+    explicit MonteCarloEngine(int seed=42):{}
+    void reset_seed() {
+        gen_.seed(initial_seed_);
+    }
     template <typename PayoffType>
     double price(const BlackScholesModel& model, const PayoffType& payoff, double maturity, std::size_t num_sims){ //num_sims est pair
         std::normal_distribution<double> dist(0.0,1.0);
@@ -19,11 +23,16 @@ class MonteCarloEngine{
         const double drift = (r - 0.5 * sigma * sigma) * maturity;
         const double diffusion = sigma * std::sqrt(maturity);
         const double discount_factor = std::exp(-r * maturity);
+        #pragma omp parallel {
+        int thread_id=omp_get_thread_num();
+        std::mt19937_64 local_gen(gen_()+ thread_id);
+        #pragma omp for reduction(+:c)
         for (std::size_t i = 0; i < num_sims/2; i++){
-            double normal=dist(gen_);
+            double normal=dist(local_gen);
             double S_t_1=model.spot_at_maturity(drift,diffusion,normal);
             double S_t_2=model.spot_at_maturity(drift,diffusion,-normal);
             c+=payoff(S_t_1)+payoff(S_t_2);
+        }
         }
         return discount_factor * (c/static_cast<double>(num_sims));
     }
