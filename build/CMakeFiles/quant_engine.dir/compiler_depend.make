@@ -3,6 +3,7 @@
 
 CMakeFiles/quant_engine.dir/main.cpp.o: /home/ethan/projects/quant-engine-cpp/main.cpp \
   /home/ethan/projects/quant-engine-cpp/include/BlackScholes.hpp \
+  /home/ethan/projects/quant-engine-cpp/include/Greeks.hpp \
   /home/ethan/projects/quant-engine-cpp/include/MonteCarlo.hpp \
   /home/ethan/projects/quant-engine-cpp/include/Payoff.hpp \
   /usr/include/alloca.h \
@@ -24,6 +25,8 @@ CMakeFiles/quant_engine.dir/main.cpp.o: /home/ethan/projects/quant-engine-cpp/ma
   /usr/include/c++/15/bits/basic_string.tcc \
   /usr/include/c++/15/bits/char_traits.h \
   /usr/include/c++/15/bits/charconv.h \
+  /usr/include/c++/15/bits/chrono.h \
+  /usr/include/c++/15/bits/codecvt.h \
   /usr/include/c++/15/bits/concept_check.h \
   /usr/include/c++/15/bits/cpp_type_traits.h \
   /usr/include/c++/15/bits/cxxabi_forced.h \
@@ -39,8 +42,11 @@ CMakeFiles/quant_engine.dir/main.cpp.o: /home/ethan/projects/quant-engine-cpp/ma
   /usr/include/c++/15/bits/istream.tcc \
   /usr/include/c++/15/bits/locale_classes.h \
   /usr/include/c++/15/bits/locale_classes.tcc \
+  /usr/include/c++/15/bits/locale_conv.h \
   /usr/include/c++/15/bits/locale_facets.h \
   /usr/include/c++/15/bits/locale_facets.tcc \
+  /usr/include/c++/15/bits/locale_facets_nonio.h \
+  /usr/include/c++/15/bits/locale_facets_nonio.tcc \
   /usr/include/c++/15/bits/localefwd.h \
   /usr/include/c++/15/bits/memory_resource.h \
   /usr/include/c++/15/bits/memoryfwd.h \
@@ -50,15 +56,18 @@ CMakeFiles/quant_engine.dir/main.cpp.o: /home/ethan/projects/quant-engine-cpp/ma
   /usr/include/c++/15/bits/ostream.h \
   /usr/include/c++/15/bits/ostream.tcc \
   /usr/include/c++/15/bits/ostream_insert.h \
+  /usr/include/c++/15/bits/parse_numbers.h \
   /usr/include/c++/15/bits/postypes.h \
   /usr/include/c++/15/bits/predefined_ops.h \
   /usr/include/c++/15/bits/ptr_traits.h \
+  /usr/include/c++/15/bits/quoted_string.h \
   /usr/include/c++/15/bits/random.h \
   /usr/include/c++/15/bits/random.tcc \
   /usr/include/c++/15/bits/range_access.h \
   /usr/include/c++/15/bits/refwrap.h \
   /usr/include/c++/15/bits/requires_hosted.h \
   /usr/include/c++/15/bits/specfun.h \
+  /usr/include/c++/15/bits/sstream.tcc \
   /usr/include/c++/15/bits/std_abs.h \
   /usr/include/c++/15/bits/stl_algo.h \
   /usr/include/c++/15/bits/stl_algobase.h \
@@ -86,6 +95,7 @@ CMakeFiles/quant_engine.dir/main.cpp.o: /home/ethan/projects/quant-engine-cpp/ma
   /usr/include/c++/15/bits/version.h \
   /usr/include/c++/15/cctype \
   /usr/include/c++/15/cerrno \
+  /usr/include/c++/15/chrono \
   /usr/include/c++/15/clocale \
   /usr/include/c++/15/cmath \
   /usr/include/c++/15/concepts \
@@ -93,6 +103,7 @@ CMakeFiles/quant_engine.dir/main.cpp.o: /home/ethan/projects/quant-engine-cpp/ma
   /usr/include/c++/15/cstdint \
   /usr/include/c++/15/cstdio \
   /usr/include/c++/15/cstdlib \
+  /usr/include/c++/15/ctime \
   /usr/include/c++/15/cwchar \
   /usr/include/c++/15/cwctype \
   /usr/include/c++/15/debug/assertions.h \
@@ -104,11 +115,13 @@ CMakeFiles/quant_engine.dir/main.cpp.o: /home/ethan/projects/quant-engine-cpp/ma
   /usr/include/c++/15/ext/string_conversions.h \
   /usr/include/c++/15/ext/type_traits.h \
   /usr/include/c++/15/initializer_list \
+  /usr/include/c++/15/iomanip \
   /usr/include/c++/15/ios \
   /usr/include/c++/15/iosfwd \
   /usr/include/c++/15/iostream \
   /usr/include/c++/15/istream \
   /usr/include/c++/15/limits \
+  /usr/include/c++/15/locale \
   /usr/include/c++/15/new \
   /usr/include/c++/15/numeric \
   /usr/include/c++/15/ostream \
@@ -117,6 +130,8 @@ CMakeFiles/quant_engine.dir/main.cpp.o: /home/ethan/projects/quant-engine-cpp/ma
   /usr/include/c++/15/pstl/glue_numeric_defs.h \
   /usr/include/c++/15/pstl/pstl_config.h \
   /usr/include/c++/15/random \
+  /usr/include/c++/15/ratio \
+  /usr/include/c++/15/sstream \
   /usr/include/c++/15/stdexcept \
   /usr/include/c++/15/streambuf \
   /usr/include/c++/15/string \
@@ -143,6 +158,7 @@ CMakeFiles/quant_engine.dir/main.cpp.o: /home/ethan/projects/quant-engine-cpp/ma
   /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/libintl.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/posix_types.h \
   /usr/include/linux/sched/types.h \
@@ -245,14 +261,17 @@ CMakeFiles/quant_engine.dir/main.cpp.o: /home/ethan/projects/quant-engine-cpp/ma
   /usr/include/x86_64-linux-gnu/c++/15/bits/error_constants.h \
   /usr/include/x86_64-linux-gnu/c++/15/bits/gthr-default.h \
   /usr/include/x86_64-linux-gnu/c++/15/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/messages_members.h \
   /usr/include/x86_64-linux-gnu/c++/15/bits/opt_random.h \
   /usr/include/x86_64-linux-gnu/c++/15/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/time_members.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/15/include/omp.h \
   /usr/lib/gcc/x86_64-linux-gnu/15/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/15/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/15/include/stdint.h
@@ -268,19 +287,25 @@ quant_engine: /lib64/ld-linux-x86-64.so.2 \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/libgcc.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/libgcc_s.so \
+  /usr/lib/gcc/x86_64-linux-gnu/15/libgomp.so \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
   /usr/lib/x86_64-linux-gnu/libc.so.6 \
   /usr/lib/x86_64-linux-gnu/libc_nonshared.a \
   /usr/lib/x86_64-linux-gnu/libm.so.6 \
   /usr/lib/x86_64-linux-gnu/libmvec.so.1 \
+  /usr/lib/x86_64-linux-gnu/libpthread.a \
   CMakeFiles/quant_engine.dir/main.cpp.o
 
 
 CMakeFiles/quant_engine.dir/main.cpp.o:
 
+/usr/lib/x86_64-linux-gnu/libpthread.a:
+
 /usr/lib/x86_64-linux-gnu/libc_nonshared.a:
 
 /usr/lib/x86_64-linux-gnu/libc.so.6:
+
+/usr/lib/gcc/x86_64-linux-gnu/15/libgomp.so:
 
 /usr/lib/gcc/x86_64-linux-gnu/15/libgcc.a:
 
@@ -290,29 +315,37 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/crti.o:
 
-/usr/include/c++/15/tr1/gamma.tcc:
+/usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so:
 
-/usr/include/c++/15/tr1/exp_integral.tcc:
+/lib64/ld-linux-x86-64.so.2:
 
-/usr/include/c++/15/bits/streambuf_iterator.h:
+/usr/lib/gcc/x86_64-linux-gnu/15/include/stdint.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+/usr/lib/gcc/x86_64-linux-gnu/15/include/stdarg.h:
 
-/usr/include/c++/15/tr1/bessel_function.tcc:
+/usr/lib/gcc/x86_64-linux-gnu/15/include/omp.h:
 
-/home/ethan/projects/quant-engine-cpp/include/Payoff.hpp:
+/usr/include/x86_64-linux-gnu/sys/types.h:
 
-/usr/include/c++/15/string:
+/usr/include/x86_64-linux-gnu/sys/select.h:
 
-/usr/include/c++/15/stdexcept:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/include/c++/15/tr1/beta_function.tcc:
+/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o:
 
-/usr/lib/x86_64-linux-gnu/libm.so:
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/include/asm-generic/int-ll64.h:
+/usr/include/x86_64-linux-gnu/c++/15/bits/messages_members.h:
 
-/usr/include/c++/15/bits/memoryfwd.h:
+/usr/include/x86_64-linux-gnu/c++/15/bits/gthr.h:
+
+/usr/include/x86_64-linux-gnu/c++/15/bits/error_constants.h:
+
+/usr/include/c++/15/locale:
+
+/usr/include/x86_64-linux-gnu/c++/15/bits/gthr-default.h:
+
+/usr/include/c++/15/limits:
 
 /usr/include/c++/15/iosfwd:
 
@@ -332,15 +365,21 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/bits/stl_function.h:
 
+/usr/include/c++/15/ctime:
+
 /usr/include/c++/15/ext/type_traits.h:
+
+/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+
+/usr/include/c++/15/iomanip:
 
 /usr/include/c++/15/bits/functional_hash.h:
 
 /usr/include/c++/15/cstdlib:
 
-/usr/include/c++/15/bits/locale_facets.h:
-
 /usr/include/c++/15/bits/requires_hosted.h:
+
+/usr/include/c++/15/bits/locale_facets.h:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
@@ -350,15 +389,11 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
-/usr/include/c++/15/system_error:
-
-/usr/include/c++/15/tr1/ell_integral.tcc:
-
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
-
 /usr/include/c++/15/cstdint:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+
+/usr/include/c++/15/chrono:
 
 /usr/include/c++/15/cctype:
 
@@ -376,6 +411,12 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/bits/string_view.tcc:
 
+/usr/include/c++/15/bits/streambuf_iterator.h:
+
+/usr/include/c++/15/tr1/exp_integral.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+
 /usr/include/c++/15/istream:
 
 /usr/include/c++/15/concepts:
@@ -390,19 +431,27 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/ext/atomicity.h:
 
-/usr/include/x86_64-linux-gnu/sys/types.h:
+/usr/include/c++/15/bits/refwrap.h:
 
-/usr/include/c++/15/bits/istream.tcc:
+/usr/include/c++/15/type_traits:
+
+/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o:
+
+/usr/include/c++/15/bits/range_access.h:
 
 /usr/include/c++/15/bits/random.h:
 
 /home/ethan/projects/quant-engine-cpp/include/BlackScholes.hpp:
 
+/usr/include/c++/15/bits/quoted_string.h:
+
+/usr/include/c++/15/ext/numeric_traits.h:
+
+/usr/include/c++/15/bits/chrono.h:
+
+/usr/include/c++/15/bits/istream.tcc:
+
 /usr/include/c++/15/bits/char_traits.h:
-
-/usr/include/c++/15/random:
-
-/usr/include/c++/15/pstl/pstl_config.h:
 
 /usr/include/c++/15/bits/version.h:
 
@@ -410,19 +459,15 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/bits/uses_allocator.h:
 
-/usr/include/x86_64-linux-gnu/c++/15/bits/gthr.h:
+/usr/include/x86_64-linux-gnu/c++/15/bits/os_defines.h:
+
+/usr/include/c++/15/bits/new_allocator.h:
 
 /usr/include/c++/15/tr1/modified_bessel_func.tcc:
-
-/usr/include/c++/15/bits/algorithmfwd.h:
-
-/usr/include/c++/15/bits/locale_facets.tcc:
 
 /usr/lib/x86_64-linux-gnu/libmvec.so.1:
 
 /usr/include/c++/15/bits/stl_iterator_base_types.h:
-
-/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
 /usr/include/stdc-predef.h:
 
@@ -432,31 +477,11 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/cwctype:
 
-/usr/include/c++/15/bits/stl_algo.h:
-
-/usr/include/c++/15/bits/cxxabi_forced.h:
-
-/usr/include/c++/15/bits/exception_defines.h:
-
-/usr/include/c++/15/bits/stl_heap.h:
-
-/usr/include/c++/15/bits/cxxabi_init_exception.h:
-
-/usr/include/c++/15/bits/basic_string.h:
-
-/usr/include/c++/15/streambuf:
-
-/usr/include/c++/15/bits/cpp_type_traits.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o:
-
-/usr/include/c++/15/bits/range_access.h:
+/usr/include/c++/15/bits/algorithmfwd.h:
 
 /usr/include/c++/15/pstl/execution_defs.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
-
-/usr/include/c++/15/ext/numeric_traits.h:
 
 /home/ethan/projects/quant-engine-cpp/main.cpp:
 
@@ -468,11 +493,21 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/bits/exception.h:
 
+/usr/lib/x86_64-linux-gnu/libm.so:
+
+/usr/include/asm-generic/int-ll64.h:
+
+/usr/include/c++/15/bits/memoryfwd.h:
+
+/usr/include/c++/15/tr1/beta_function.tcc:
+
+/usr/include/c++/15/bits/sstream.tcc:
+
+/home/ethan/projects/quant-engine-cpp/include/Greeks.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
+
 /usr/include/c++/15/debug/debug.h:
-
-/usr/include/ctype.h:
-
-/usr/include/c++/15/bits/random.tcc:
 
 /usr/lib/gcc/x86_64-linux-gnu/15/libgcc_s.so:
 
@@ -480,9 +515,19 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/bits/ptr_traits.h:
 
+/usr/include/c++/15/bits/std_abs.h:
+
+/usr/include/c++/15/typeinfo:
+
 /usr/include/c++/15/bits/locale_classes.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/iscanonical.h:
+
+/home/ethan/projects/quant-engine-cpp/include/Payoff.hpp:
+
+/usr/include/c++/15/tr1/bessel_function.tcc:
+
+/usr/include/c++/15/bits/codecvt.h:
 
 /usr/include/c++/15/bits/stl_iterator.h:
 
@@ -490,23 +535,41 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/alloca.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/c++/15/numeric:
-
 /usr/include/asm-generic/errno-base.h:
 
-/usr/include/c++/15/bits/stl_numeric.h:
-
-/usr/include/x86_64-linux-gnu/c++/15/bits/error_constants.h:
-
-/usr/include/c++/15/bits/basic_ios.tcc:
-
 /usr/include/c++/15/bits/exception_ptr.h:
+
+/usr/include/c++/15/bits/cpp_type_traits.h:
+
+/usr/include/c++/15/bits/basic_string.h:
+
+/usr/include/c++/15/streambuf:
 
 /usr/include/c++/15/bits/specfun.h:
 
 /usr/include/c++/15/backward/binders.h:
+
+/usr/include/c++/15/bits/stl_numeric.h:
+
+/usr/include/c++/15/bits/basic_ios.tcc:
+
+/usr/include/c++/15/bits/exception_defines.h:
+
+/usr/include/c++/15/bits/stl_heap.h:
+
+/usr/include/c++/15/bits/cxxabi_init_exception.h:
+
+/usr/include/c++/15/bits/locale_facets.tcc:
+
+/usr/include/c++/15/bits/locale_conv.h:
+
+/usr/include/c++/15/bits/random.tcc:
+
+/usr/include/ctype.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/c++/15/numeric:
 
 /usr/include/asm-generic/posix_types.h:
 
@@ -526,15 +589,19 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/bits/vector.tcc:
 
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/include/asm-generic/types.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/linux/sched/types.h:
+
+/usr/include/c++/15/bits/nested_exception.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so:
-
-/lib64/ld-linux-x86-64.so.2:
-
-/usr/include/c++/15/bits/refwrap.h:
-
-/usr/include/c++/15/type_traits:
+/usr/include/c++/15/bits/locale_facets_nonio.tcc:
 
 /usr/include/c++/15/bits/invoke.h:
 
@@ -548,27 +615,23 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/bits/ios_base.h:
 
-/usr/include/wchar.h:
-
 /usr/include/c++/15/bits/postypes.h:
 
 /usr/include/x86_64-linux-gnu/asm/posix_types.h:
+
+/usr/include/c++/15/bits/stl_algo.h:
+
+/usr/include/c++/15/bits/cxxabi_forced.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-macros.h:
 
 /usr/include/c++/15/bits/localefwd.h:
 
+/usr/include/c++/15/bits/parse_numbers.h:
+
 /usr/include/c++/15/bits/stringfwd.h:
 
-/usr/include/x86_64-linux-gnu/bits/time.h:
-
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
 /usr/include/c++/15/ext/string_conversions.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
 /usr/include/c++/15/cmath:
 
@@ -594,15 +657,37 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
 
-/usr/include/asm-generic/types.h:
+/usr/include/c++/15/pstl/pstl_config.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+/usr/include/c++/15/random:
 
-/usr/include/asm-generic/bitsperlong.h:
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-/usr/include/c++/15/bits/std_abs.h:
+/usr/include/wchar.h:
 
-/usr/include/c++/15/typeinfo:
+/usr/include/c++/15/sstream:
+
+/usr/include/c++/15/ratio:
+
+/usr/include/c++/15/stdexcept:
+
+/usr/include/c++/15/string:
+
+/usr/include/c++/15/system_error:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+/usr/include/c++/15/tr1/ell_integral.tcc:
+
+/usr/include/c++/15/tr1/gamma.tcc:
+
+/usr/lib/x86_64-linux-gnu/Scrt1.o:
+
+/usr/include/c++/15/tr1/hypergeometric.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
 
 /usr/include/c++/15/tr1/legendre_function.tcc:
 
@@ -634,17 +719,13 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/features.h:
 
+/usr/include/libintl.h:
+
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
+
 /usr/include/linux/posix_types.h:
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-
-/usr/include/c++/15/limits:
-
-/usr/include/x86_64-linux-gnu/c++/15/bits/gthr-default.h:
-
-/usr/include/c++/15/bits/nested_exception.h:
-
-/usr/include/linux/sched/types.h:
 
 /usr/include/c++/15/bits/locale_classes.h:
 
@@ -662,8 +743,6 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/math.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/15/include/stdint.h:
-
 /usr/include/wctype.h:
 
 /usr/include/sched.h:
@@ -678,10 +757,6 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
@@ -692,10 +767,6 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
-/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
-
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
 /usr/lib/x86_64-linux-gnu/libm.so.6:
 
 /usr/include/c++/15/bits/basic_ios.h:
@@ -705,6 +776,8 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 /usr/include/c++/15/bits/move.h:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/ctype_inline.h:
+
+/usr/include/x86_64-linux-gnu/c++/15/bits/time_members.h:
 
 /usr/include/c++/15/algorithm:
 
@@ -736,17 +809,11 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
 /usr/include/x86_64-linux-gnu/bits/timex.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
-
-/usr/include/c++/15/bits/new_allocator.h:
-
-/usr/include/x86_64-linux-gnu/c++/15/bits/os_defines.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
@@ -798,6 +865,8 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
+/usr/include/c++/15/bits/locale_facets_nonio.h:
+
 /usr/include/x86_64-linux-gnu/c++/15/bits/atomic_word.h:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/c++allocator.h:
@@ -808,14 +877,8 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/c++locale.h:
 
-/usr/include/c++/15/bits/uses_allocator_args.h:
-
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
+/usr/include/c++/15/bits/uses_allocator_args.h:
+
 /usr/include/x86_64-linux-gnu/c++/15/bits/cpu_defines.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/15/include/stdarg.h:
-
-/usr/include/c++/15/tr1/hypergeometric.tcc:
-
-/usr/lib/x86_64-linux-gnu/Scrt1.o:

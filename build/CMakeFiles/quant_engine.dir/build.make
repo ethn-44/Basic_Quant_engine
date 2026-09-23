@@ -96,6 +96,8 @@ quant_engine_EXTERNAL_OBJECTS =
 quant_engine: CMakeFiles/quant_engine.dir/main.cpp.o
 quant_engine: CMakeFiles/quant_engine.dir/build.make
 quant_engine: CMakeFiles/quant_engine.dir/compiler_depend.ts
+quant_engine: /usr/lib/gcc/x86_64-linux-gnu/15/libgomp.so
+quant_engine: /usr/lib/x86_64-linux-gnu/libpthread.a
 quant_engine: CMakeFiles/quant_engine.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ethan/projects/quant-engine-cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable quant_engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/quant_engine.dir/link.txt --verbose=$(VERBOSE)

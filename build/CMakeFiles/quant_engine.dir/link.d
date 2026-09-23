@@ -3,6 +3,8 @@ quant_engine: \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o \
   CMakeFiles/quant_engine.dir/main.cpp.o \
+  /usr/lib/gcc/x86_64-linux-gnu/15/libgomp.so \
+  /usr/lib/x86_64-linux-gnu/libpthread.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/libm.so \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/libm.so \
@@ -29,8 +31,7 @@ quant_engine: \
   /usr/lib/gcc/x86_64-linux-gnu/15/libgcc.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o \
-  /lib64/ld-linux-x86-64.so.2 \
-  /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/libgcc_s.so.1
+  /lib64/ld-linux-x86-64.so.2
 
 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/Scrt1.o:
 
@@ -39,6 +40,10 @@ quant_engine: \
 /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o:
 
 CMakeFiles/quant_engine.dir/main.cpp.o:
+
+/usr/lib/gcc/x86_64-linux-gnu/15/libgomp.so:
+
+/usr/lib/x86_64-linux-gnu/libpthread.a:
 
 /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so:
 
@@ -93,5 +98,3 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crtn.o:
 
 /lib64/ld-linux-x86-64.so.2:
-
-/usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/libgcc_s.so.1:
