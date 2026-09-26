@@ -211,15 +211,17 @@ CMakeFiles/quant_engine.dir/main.cpp.o: \
  /usr/include/c++/15/tr1/modified_bessel_func.tcc \
  /usr/include/c++/15/tr1/poly_hermite.tcc \
  /usr/include/c++/15/tr1/poly_laguerre.tcc \
- /usr/include/c++/15/tr1/riemann_zeta.tcc /usr/include/c++/15/numeric \
- /usr/include/c++/15/bits/stl_numeric.h \
- /usr/include/c++/15/pstl/glue_numeric_defs.h /usr/include/c++/15/random \
+ /usr/include/c++/15/tr1/riemann_zeta.tcc /usr/include/c++/15/random \
  /usr/include/c++/15/bits/random.h \
  /usr/include/x86_64-linux-gnu/c++/15/bits/opt_random.h \
- /usr/include/c++/15/bits/random.tcc \
+ /usr/include/c++/15/bits/random.tcc /usr/include/c++/15/numeric \
+ /usr/include/c++/15/bits/stl_numeric.h \
+ /usr/include/c++/15/pstl/glue_numeric_defs.h \
  /home/ethan/projects/quant-engine-cpp/include/MonteCarlo.hpp \
  /home/ethan/projects/quant-engine-cpp/include/BlackScholes.hpp \
  /home/ethan/projects/quant-engine-cpp/include/Payoff.hpp \
+ /home/ethan/projects/quant-engine-cpp/include/PathPayoff.hpp \
  /usr/lib/gcc/x86_64-linux-gnu/15/include/omp.h \
  /home/ethan/projects/quant-engine-cpp/include/Greeks.hpp \
- /home/ethan/projects/quant-engine-cpp/include/MonteCarlo.hpp
+ /home/ethan/projects/quant-engine-cpp/include/MonteCarlo.hpp \
+ /home/ethan/projects/quant-engine-cpp/include/PathPayoff.hpp
