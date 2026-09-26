@@ -4,9 +4,11 @@
 CMakeFiles/quant_engine.dir/main.cpp.o: /home/ethan/projects/quant-engine-cpp/main.cpp \
   /home/ethan/projects/quant-engine-cpp/include/BlackScholes.hpp \
   /home/ethan/projects/quant-engine-cpp/include/Greeks.hpp \
+  /home/ethan/projects/quant-engine-cpp/include/Heston.hpp \
   /home/ethan/projects/quant-engine-cpp/include/MonteCarlo.hpp \
   /home/ethan/projects/quant-engine-cpp/include/PathPayoff.hpp \
   /home/ethan/projects/quant-engine-cpp/include/Payoff.hpp \
+  /home/ethan/projects/quant-engine-cpp/include/reg.hpp \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \
@@ -342,6 +344,8 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/error_constants.h:
 
+/usr/include/x86_64-linux-gnu/c++/15/bits/ctype_base.h:
+
 /usr/include/c++/15/locale:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/gthr-default.h:
@@ -452,9 +456,13 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/bits/ptr_traits.h:
 
-/usr/include/c++/15/bits/chrono.h:
+/usr/include/c++/15/bits/predefined_ops.h:
 
-/usr/include/c++/15/bits/istream.tcc:
+/usr/include/c++/15/bits/postypes.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types.h:
+
+/usr/include/c++/15/bits/chrono.h:
 
 /usr/include/c++/15/bits/char_traits.h:
 
@@ -470,19 +478,21 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/tr1/modified_bessel_func.tcc:
 
+/usr/include/c++/15/bits/algorithmfwd.h:
+
+/usr/include/c++/15/cmath:
+
+/usr/include/stdint.h:
+
+/usr/include/endian.h:
+
 /usr/lib/x86_64-linux-gnu/libmvec.so.1:
 
 /usr/include/c++/15/bits/stl_iterator_base_types.h:
 
+/home/ethan/projects/quant-engine-cpp/include/reg.hpp:
+
 /usr/include/stdc-predef.h:
-
-/usr/include/c++/15/bits/predefined_ops.h:
-
-/usr/include/c++/15/bits/algorithmfwd.h:
-
-/usr/include/c++/15/pstl/execution_defs.h:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /home/ethan/projects/quant-engine-cpp/main.cpp:
 
@@ -530,15 +540,25 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/bits/codecvt.h:
 
+/usr/include/c++/15/bits/stl_numeric.h:
+
 /usr/include/c++/15/bits/stl_iterator.h:
 
 /usr/include/c++/15/vector:
 
-/usr/include/alloca.h:
+/usr/include/c++/15/bits/basic_ios.tcc:
 
 /usr/include/asm-generic/errno-base.h:
 
+/usr/include/alloca.h:
+
 /usr/include/c++/15/bits/exception_ptr.h:
+
+/usr/include/x86_64-linux-gnu/c++/15/bits/cpu_defines.h:
+
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/include/c++/15/bits/uses_allocator_args.h:
 
 /usr/include/c++/15/bits/cpp_type_traits.h:
 
@@ -550,9 +570,7 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/backward/binders.h:
 
-/usr/include/c++/15/bits/stl_numeric.h:
-
-/usr/include/c++/15/bits/basic_ios.tcc:
+/usr/include/c++/15/bits/istream.tcc:
 
 /usr/include/c++/15/bits/exception_defines.h:
 
@@ -572,9 +590,9 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/numeric:
 
-/usr/include/asm-generic/posix_types.h:
-
 /usr/include/c++/15/bits/allocator.h:
+
+/usr/include/asm-generic/posix_types.h:
 
 /usr/include/c++/15/bit:
 
@@ -616,10 +634,6 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/bits/ios_base.h:
 
-/usr/include/c++/15/bits/postypes.h:
-
-/usr/include/x86_64-linux-gnu/asm/posix_types.h:
-
 /usr/include/c++/15/bits/stl_algo.h:
 
 /usr/include/c++/15/bits/cxxabi_forced.h:
@@ -638,12 +652,6 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/ext/string_conversions.h:
 
-/usr/include/c++/15/cmath:
-
-/usr/include/stdint.h:
-
-/usr/include/endian.h:
-
 /usr/include/c++/15/bits/streambuf.tcc:
 
 /usr/include/c++/15/bits/basic_string.tcc:
@@ -661,6 +669,10 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 /usr/include/c++/15/bits/ostream_insert.h:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/c++/15/pstl/execution_defs.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /usr/include/c++/15/pstl/pstl_config.h:
 
@@ -704,9 +716,9 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
-/usr/include/c++/15/bits/charconv.h:
-
 /usr/include/c++/15/pstl/glue_algorithm_defs.h:
+
+/usr/include/c++/15/bits/charconv.h:
 
 /usr/include/c++/15/tr1/poly_laguerre.tcc:
 
@@ -796,8 +808,6 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
-/usr/include/x86_64-linux-gnu/c++/15/bits/ctype_base.h:
-
 /usr/include/time.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
@@ -872,6 +882,8 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/atomic_word.h:
 
+/home/ethan/projects/quant-engine-cpp/include/Heston.hpp:
+
 /usr/include/x86_64-linux-gnu/c++/15/bits/c++allocator.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/15/include/stddef.h:
@@ -879,9 +891,3 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 /usr/include/x86_64-linux-gnu/c++/15/bits/c++config.h:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/c++locale.h:
-
-/usr/include/x86_64-linux-gnu/bits/timesize.h:
-
-/usr/include/c++/15/bits/uses_allocator_args.h:
-
-/usr/include/x86_64-linux-gnu/c++/15/bits/cpu_defines.h:

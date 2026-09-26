@@ -221,7 +221,9 @@ CMakeFiles/quant_engine.dir/main.cpp.o: \
  /home/ethan/projects/quant-engine-cpp/include/BlackScholes.hpp \
  /home/ethan/projects/quant-engine-cpp/include/Payoff.hpp \
  /home/ethan/projects/quant-engine-cpp/include/PathPayoff.hpp \
+ /home/ethan/projects/quant-engine-cpp/include/reg.hpp \
  /usr/lib/gcc/x86_64-linux-gnu/15/include/omp.h \
  /home/ethan/projects/quant-engine-cpp/include/Greeks.hpp \
  /home/ethan/projects/quant-engine-cpp/include/MonteCarlo.hpp \
- /home/ethan/projects/quant-engine-cpp/include/PathPayoff.hpp
+ /home/ethan/projects/quant-engine-cpp/include/PathPayoff.hpp \
+ /home/ethan/projects/quant-engine-cpp/include/Heston.hpp
