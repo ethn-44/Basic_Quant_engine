@@ -5,6 +5,7 @@ CMakeFiles/quant_engine.dir/main.cpp.o: /home/ethan/projects/quant-engine-cpp/ma
   /home/ethan/projects/quant-engine-cpp/include/BlackScholes.hpp \
   /home/ethan/projects/quant-engine-cpp/include/Greeks.hpp \
   /home/ethan/projects/quant-engine-cpp/include/Heston.hpp \
+  /home/ethan/projects/quant-engine-cpp/include/Merton.hpp \
   /home/ethan/projects/quant-engine-cpp/include/MonteCarlo.hpp \
   /home/ethan/projects/quant-engine-cpp/include/PathPayoff.hpp \
   /home/ethan/projects/quant-engine-cpp/include/Payoff.hpp \
@@ -346,6 +347,8 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/ctype_base.h:
 
+/usr/include/x86_64-linux-gnu/c++/15/bits/c++locale.h:
+
 /usr/include/c++/15/locale:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/gthr-default.h:
@@ -432,8 +435,6 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/x86_64-linux-gnu/asm/errno.h:
 
-/usr/include/c++/15/bits/stl_tempbuf.h:
-
 /usr/include/c++/15/ext/atomicity.h:
 
 /usr/include/c++/15/bits/refwrap.h:
@@ -461,6 +462,8 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 /usr/include/c++/15/bits/postypes.h:
 
 /usr/include/x86_64-linux-gnu/asm/posix_types.h:
+
+/usr/include/c++/15/bits/parse_numbers.h:
 
 /usr/include/c++/15/bits/chrono.h:
 
@@ -494,15 +497,7 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/stdc-predef.h:
 
-/home/ethan/projects/quant-engine-cpp/main.cpp:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:
-
 /usr/include/c++/15/initializer_list:
-
-/usr/include/c++/15/ostream:
-
-/usr/include/c++/15/bits/exception.h:
 
 /usr/lib/x86_64-linux-gnu/libm.so:
 
@@ -511,6 +506,10 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 /usr/include/c++/15/bits/memoryfwd.h:
 
 /usr/include/c++/15/tr1/beta_function.tcc:
+
+/home/ethan/projects/quant-engine-cpp/main.cpp:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
 /home/ethan/projects/quant-engine-cpp/include/BlackScholes.hpp:
 
@@ -525,14 +524,6 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 /home/ethan/projects/quant-engine-cpp/include/Greeks.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
-
-/usr/include/c++/15/bits/std_abs.h:
-
-/usr/include/c++/15/typeinfo:
-
-/usr/include/c++/15/bits/locale_classes.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
 /home/ethan/projects/quant-engine-cpp/include/Payoff.hpp:
 
@@ -549,6 +540,16 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 /usr/include/c++/15/bits/basic_ios.tcc:
 
 /usr/include/asm-generic/errno-base.h:
+
+/usr/include/c++/15/bits/stl_tempbuf.h:
+
+/usr/include/c++/15/bits/std_abs.h:
+
+/usr/include/c++/15/typeinfo:
+
+/usr/include/c++/15/bits/locale_classes.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
 
 /usr/include/alloca.h:
 
@@ -608,9 +609,9 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/bits/vector.tcc:
 
-/usr/include/asm-generic/bitsperlong.h:
-
 /usr/include/asm-generic/types.h:
+
+/usr/include/asm-generic/bitsperlong.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
@@ -638,11 +639,11 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 
 /usr/include/c++/15/bits/cxxabi_forced.h:
 
+/home/ethan/projects/quant-engine-cpp/include/Merton.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/mathcalls-macros.h:
 
 /usr/include/c++/15/bits/localefwd.h:
-
-/usr/include/c++/15/bits/parse_numbers.h:
 
 /usr/include/c++/15/bits/stringfwd.h:
 
@@ -669,6 +670,10 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 /usr/include/c++/15/bits/ostream_insert.h:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/c++/15/bits/exception.h:
+
+/usr/include/c++/15/ostream:
 
 /usr/include/c++/15/pstl/execution_defs.h:
 
@@ -889,5 +894,3 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 /usr/lib/gcc/x86_64-linux-gnu/15/include/stddef.h:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/c++config.h:
-
-/usr/include/x86_64-linux-gnu/c++/15/bits/c++locale.h:

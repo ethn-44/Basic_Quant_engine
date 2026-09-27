@@ -226,4 +226,5 @@ CMakeFiles/quant_engine.dir/main.cpp.o: \
  /home/ethan/projects/quant-engine-cpp/include/Greeks.hpp \
  /home/ethan/projects/quant-engine-cpp/include/MonteCarlo.hpp \
  /home/ethan/projects/quant-engine-cpp/include/PathPayoff.hpp \
- /home/ethan/projects/quant-engine-cpp/include/Heston.hpp
+ /home/ethan/projects/quant-engine-cpp/include/Heston.hpp \
+ /home/ethan/projects/quant-engine-cpp/include/Merton.hpp
