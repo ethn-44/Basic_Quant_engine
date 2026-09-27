@@ -1,55 +1,75 @@
 #include <iostream>
 #include <vector>
+#include <iomanip>
+#include <chrono>
 #include "Payoff.hpp"
 #include "BlackScholes.hpp"
 #include <numeric>
 #include <random>
 #include "MonteCarlo.hpp"
 #include "Greeks.hpp"
+#include "PathPayoff.hpp"
+#include "Heston.hpp"
+#include "Merton.hpp"
 using std::cout;
 using std::endl;
 
+
+template <typename Func>
+auto measure_execution(Func&& func) {
+    auto start = std::chrono::high_resolution_clock::now();
+    auto result = func();
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double, std::milli> elapsed = end - start;
+    return std::make_pair(result, elapsed.count());
+}
+
 int main() {
-    const double spot = 100.0;       // S0
-    const double strike = 100.0;     // K (At-The-Money)
-    const double rate = 0.05;        // r = 5%
-    const double vol = 0.20;         // sigma = 20%
-    const double maturity = 1.0;     // T = 1 an
-    const std::size_t num_sims = 10'000'000; // 10 millions de simulations
+    // Paramètres de marché communs
+    double spot = 100.0;
+    double strike = 100.0;
+    double rate = 0.05;
+    double vol = 0.20;
+    double maturity = 1.0;
+    std::size_t num_sims = 50000;
+    std::size_t num_steps = 252;
 
-    // 2. Instanciation des objets principaux
-    BlackScholesModel model(spot, rate, vol);
-    CallPayoff payoff(strike);
-    MonteCarloEngine mc_engine(42); // Seed = 42
-    GreeksEngine greeks_engine(mc_engine, 0.01); // Bump ratio = 1%
+    MonteCarloEngine mc_engine(42);
+    GreeksEngine greeks_engine(mc_engine);
 
-    std::cout << "==========================================" << std::endl;
-    std::cout << "   MONTE CARLO ENGINE - RISK ANALYTICS    " << std::endl;
-    std::cout << "==========================================" << std::endl;
-    std::cout << "Simulations : " << num_sims << std::endl;
-    std::cout << "Spot        : " << spot << std::endl;
-    std::cout << "Strike      : " << strike << std::endl;
-    std::cout << "Maturite    : " << maturity << " an(s)" << std::endl;
-    std::cout << "------------------------------------------" << std::endl;
+    PayoffPut put_payoff(strike);
 
-    // 3. Mesure du temps d'exécution et calcul des Grecques
-    auto start_time = std::chrono::high_resolution_clock::now();
+    std::cout << "=== 1. TEST BLACK-SCHOLES & GREEQUES ===" << std::endl;
+    BlackScholesModel bs_model(spot, rate, vol);
+    
+    double bs_price = mc_engine.price_path_dependant(bs_model, put_payoff, maturity, num_sims, num_steps); // ou price_bs
+    std::cout << "Prix Put Européen (BS) : " << bs_price << std::endl;
 
-    GreeksResult result = greeks_engine.calculate(model, payoff, maturity, num_sims);
+    GreeksResult bs_greeks = greeks_engine.calculate(bs_model, put_payoff, maturity, num_sims);
+    std::cout << "Delta : " << bs_greeks.delta << " | Gamma : " << bs_greeks.gamma 
+              << " | Vega : " << bs_greeks.vega << " | Rho : " << bs_greeks.rho << std::endl;
 
-    auto end_time = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> elapsed = end_time - start_time;
+    std::cout << "\n=== 2. TEST MODELE DE MERTON (JUMP-DIFFUSION) ===" << std::endl;
+    // lambda = 1.0 (1 saut/an), mu_j = -0.10 (saut de -10%), delta_j = 0.15
+    MertonModel merton_model(spot, rate, vol, 1.0, -0.10, 0.15);
+    
+    mc_engine.reset_seed();
+    double merton_price = mc_engine.price_path_dependant(merton_model, put_payoff, maturity, num_sims, num_steps);
+    std::cout << "Prix Put Merton : " << merton_price << std::endl;
 
-    // 4. Affichage des résultats
-    std::cout << std::fixed << std::setprecision(5);
-    std::cout << "Prix Option : " << result.price << std::endl;
-    std::cout << "Delta       : " << result.delta << std::endl;
-    std::cout << "Gamma       : " << result.gamma << std::endl;
-    std::cout << "Vega        : " << result.vega  << std::endl;
-    std::cout << "Rho         : " << result.rho   << std::endl;
-    std::cout << "------------------------------------------" << std::endl;
-    std::cout << "Temps d'execution : " << elapsed.count() << " s" << std::endl;
-    std::cout << "==========================================" << std::endl;
+    GreeksResult merton_greeks = greeks_engine.calculate(merton_model, put_payoff, maturity, num_sims);
+    std::cout << "Delta Merton : " << merton_greeks.delta << " | Vega Merton : " << merton_greeks.vega << std::endl;
+
+    std::cout << "\n=== 3. TEST MODELE DE HESTON (VOL STOCHASTIQUE) ===" << std::endl;
+    // v0 = 0.04 (vol=20%), kappa = 2.0, theta = 0.04, xi = 0.3, rho = -0.7
+    HestonModel heston_model(spot, rate, 0.04, 2.0, 0.04, 0.3, -0.7);
+    
+    mc_engine.reset_seed();
+    double heston_price = mc_engine.price_path_dependant(heston_model, put_payoff, maturity, num_sims, num_steps);
+    std::cout << "Prix Put Heston : " << heston_price << std::endl;
+
+    GreeksResult heston_greeks = greeks_engine.calculate(heston_model, put_payoff, maturity, num_sims);
+    std::cout << "Delta Heston : " << heston_greeks.delta << " | Vega Heston : " << heston_greeks.vega << std::endl;
 
     return 0;
 }

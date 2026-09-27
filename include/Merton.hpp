@@ -7,7 +7,7 @@
 
 class MertonModel{
     private:
-    double spt_;
+    double spot_;
     double rate_;
     double vol_;
     double lambda_;
@@ -22,6 +22,15 @@ class MertonModel{
     double lambda() const { return lambda_; }
     double mu_j() const { return mu_j_; }
     double delta_j() const { return delta_j_; }
+    MertonModel with_spot(double new_spot) const {
+        return MertonModel(new_spot, rate_, vol_, lambda_, mu_j_, delta_j_);
+    }
+    MertonModel with_vol(double new_vol) const {
+        return MertonModel(spot_, rate_, new_vol, lambda_, mu_j_, delta_j_);
+    }
+    MertonModel with_rate(double new_rate) const {
+        return MertonModel(spot_, new_rate, vol_, lambda_, mu_j_, delta_j_);
+    }
 
     template <typename Generator>
     std::vector<double> generate_path(double maturity, std::size_t num_steps, Generator& gen) const{
@@ -38,7 +47,6 @@ class MertonModel{
             double Z=dist(gen);
             c=std::exp(drift+vol_*sqdt*Z);
             int num_jumps = poisson_dist(gen);
-            double jump_factor = 1.0;
             for (int j = 0; j < num_jumps; ++j) {
                 double J =dist(gen);
                 c*=std::exp(mu_j_ + delta_j_ * J);
