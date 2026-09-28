@@ -8,6 +8,8 @@
 #include "reg.hpp"
 #include <omp.h>
 #include <cmath>
+#include <fstream>
+#include <string>
 class MonteCarloEngine{
     private:
     int initial_seed_;
@@ -131,6 +133,30 @@ class MonteCarloEngine{
         return factor_discount * mean_cash_flow;
         
 
+    }
+    template <typename ModelType>
+    void export_paths_to_csv(const std::string& filename, const ModelType& model, double maturity, std::size_t num_steps, std::size_t num_paths_to_export) {
+        std::ofstream file(filename);
+        if (!file.is_open()) return;
+
+        std::mt19937_64 local_gen(initial_seed_);
+        std::vector<std::vector<double>> paths(num_paths_to_export);
+        for (std::size_t i = 0; i < num_paths_to_export; ++i) {
+            paths[i] = model.generate_path(maturity, num_steps, local_gen);
+        }
+
+        file << "Step";
+        for (std::size_t i = 0; i < num_paths_to_export; ++i) {
+            file << ",Path_" << i;
+        }
+        file << "\n";
+        for (std::size_t step = 0; step <= num_steps; ++step) {
+            file << step;
+            for (std::size_t i = 0; i < num_paths_to_export; ++i) {
+                file << "," << paths[i][step];
+            }
+            file << "\n";
+        }
     }
 };
 

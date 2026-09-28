@@ -1,0 +1,80 @@
+#ifndef MULTIASSETMODEL_HPP
+#define MULTIASSETMODEL_HPP
+#include "MatrixCrout.hpp"
+#include <cmath>
+#include <vector>
+#include <random>
+#include <omp.h>
+class MultiAsset{
+    private : 
+    std::vector<std::vector<double>> cov_var_;
+    std::vector<double> spots_;
+    std::vector<double> vol_;
+    double rate_;
+    decomposition M_;
+    std::vector<std::vector<double>> D_;
+    std::vector<std::vector<double>> L_;
+    public :
+
+    explicit MultiAsset(const std::vector<double>& spots,const std::vector<double>& vol,double rate,const std::vector<std::vector<double>>& cov_var): spots_(spots),vol_(vol),rate_(rate),cov_var_(cov_var)
+    {
+    decomposition M = Crout_decompo(cov_var_);
+    L_ = M.L;
+    D_ = M.D;
+    }
+
+    std::vector<std::vector<double>> price_Assets_bs(double maturity, std::size_t num_steps, std::mt19937_64& rng) const {
+        double dt = maturity / static_cast<double>(num_steps);
+        std::normal_distribution<double> dist(0.0, 1.0);
+        std::size_t n=spots_.size();
+        std::vector<std::vector<double>> price(num_steps + 1, std::vector<double>(n));
+        price[0]=spots_;
+        std::vector<double> X(n);
+        std::vector<double> Z(n);
+        for (std::size_t i=1; i<=num_steps;++i){
+            for (std::size_t j=0; j<n;++j){
+                Z[j]=std::sqrt(D_[j][j])*dist(rng);
+                double c=0;
+                for (std::size_t k=0; k<j;++k){
+                    c+=L_[j][k]*Z[k];
+                }
+                X[j]=c+Z[j];
+                price[i][j]=price[i-1][j]*std::exp((rate_-vol_[j]*vol_[j]/2.0)*dt + vol_[j]*std::sqrt(dt)*X[j]);
+            }
+        }
+    return price;
+    }
+    std::vector<std::vector<double>> price_Assets_Heston(double maturity, std::size_t num_steps, std::mt19937_64& rng,const std::vector<double>& kappa,const std::vector<double>& theta, const std::vector<double>& xi,const std::vector<double>& rho) const {
+        double dt = maturity / static_cast<double>(num_steps);
+        double sqdt= std::sqrt(dt);
+        std::normal_distribution<double> dist(0.0, 1.0);
+        std::size_t n=spots_.size();
+        std::vector<std::vector<double>> price(num_steps + 1, std::vector<double>(n));
+        price[0]=spots_;
+        std::vector<std::vector<double>> vol(num_steps + 1, std::vector<double>(n));
+        vol[0]=vol_;
+        std::vector<double> X(n);
+        std::vector<double> Z(n);
+        for (std::size_t i=1; i<=num_steps;++i){
+            for (std::size_t j=0; j<n;++j){
+                Z[j]=std::sqrt(D_[j][j])*dist(rng);
+                double c=0;
+                for (std::size_t k=0; k<j;++k){
+                    c+=L_[j][k]*Z[k];
+                }
+                X[j]=c+Z[j];
+                double v_plus = std::max(vol[i-1][j], 0.0);
+                double Z_2=dist(rng);
+                double Z_v=rho[j]*X[j]+std::sqrt(1.0-rho[j]*rho[j])*Z_2;
+                vol[i][j]=v_plus + kappa[j]*(theta[j]-v_plus)*dt + xi[j]*std::sqrt(v_plus)*sqdt*Z_v;
+                price[i][j]=price[i-1][j]*std::exp((rate_-v_plus/2.0)*dt+std::sqrt(v_plus)*sqdt*X[j]);
+            }
+        }
+    return price;
+    }
+    
+
+};
+
+
+#endif

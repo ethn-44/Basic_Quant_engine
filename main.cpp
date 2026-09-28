@@ -25,7 +25,6 @@ auto measure_execution(Func&& func) {
 }
 
 int main() {
-    // Paramètres de marché communs
     double spot = 100.0;
     double strike = 100.0;
     double rate = 0.05;
@@ -50,9 +49,9 @@ int main() {
               << " | Vega : " << bs_greeks.vega << " | Rho : " << bs_greeks.rho << std::endl;
 
     std::cout << "\n=== 2. TEST MODELE DE MERTON (JUMP-DIFFUSION) ===" << std::endl;
-    // lambda = 1.0 (1 saut/an), mu_j = -0.10 (saut de -10%), delta_j = 0.15
-    MertonModel merton_model(spot, rate, vol, 1.0, -0.10, 0.15);
     
+    MertonModel merton_model(spot, rate, vol, 1.0, -0.10, 0.15);
+    mc_engine.export_paths_to_csv("simulation_paths.csv", merton_model, 1.0, 252, 50);
     mc_engine.reset_seed();
     double merton_price = mc_engine.price_path_dependant(merton_model, put_payoff, maturity, num_sims, num_steps);
     std::cout << "Prix Put Merton : " << merton_price << std::endl;
@@ -61,7 +60,7 @@ int main() {
     std::cout << "Delta Merton : " << merton_greeks.delta << " | Vega Merton : " << merton_greeks.vega << std::endl;
 
     std::cout << "\n=== 3. TEST MODELE DE HESTON (VOL STOCHASTIQUE) ===" << std::endl;
-    // v0 = 0.04 (vol=20%), kappa = 2.0, theta = 0.04, xi = 0.3, rho = -0.7
+    
     HestonModel heston_model(spot, rate, 0.04, 2.0, 0.04, 0.3, -0.7);
     
     mc_engine.reset_seed();
