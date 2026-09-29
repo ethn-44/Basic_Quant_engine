@@ -4,12 +4,14 @@
 #include <cmath>
 #include <vector>
 #include <random>
+#include "Payoff.hpp"
 class MultiAssetsPayoff{
     private :
     std::vector<bool> is_asian_;
+    bool is_american_ ;
     
     public :
-    explicit MultiAssetsPayoff(,std::vector<bool>> is_asian):is_asian_(is_asian){}
+    explicit MultiAssetsPayoff(std::vector<bool>> is_asian, bool is_americain):is_americain_(is_americain),is_asian_(is_asian){}
 
     double evaluate_basket(const std::vector<std::vector<double>> price,const std::vector<double>& weight,const double strike){
         double c=0;
@@ -29,8 +31,63 @@ class MultiAssetsPayoff{
         }
         return std::max(c-strike, 0.0);
     }
-    double 
-    
+    double evaluate_rainbow(const std::vector<std::vector<double>> price,const double barrier,double strike, bool put){
+        std::size_t n=price[0].size();
+        std::size_t m=price.size();
+        if (is_americain_==false){
+            if (put==true){
+                double min=price[m-1][0]/price[0][0];
+                double d=0;
+                int k_min=0;
+                for (std::size_t i=1; i<n;++i){
+                    d=price[m-1][i]/price[0][i];
+                    if (d<min){
+                        min=d;
+                        k_min=i;
+                    }
+                }
+                PayoffPut calc(strike);
+                return calc(min);   
+            }else{
+                double max=price[m-1][0]/price[0][0];
+                double d=0;
+                int k_max=0;
+                for (std::size_t i=1; i<n;++i){
+                    d=price[m-1][i]/price[0][i];
+                    if(d>max){
+                    max=d;
+                    k_max=i;
+                    }
+                }
+                PayoffCall calc(strike);
+                return calc(max);
+            }
+        }else{
+            for (std::size_t j = 1; j < m; ++j) {
+                if (put == true) {
+                    double min = price[j][0] / price[0][0];
+                    for (std::size_t k = 1; k < n; ++k) {
+                        double d = price[j][k] / price[0][k];
+                        if (d < min) { min = d; }
+                    }
+                    if (min < barrier || j == m - 1) {
+                        PayoffPut calc(strike);
+                        return calc(min);
+                    }
+                } else {
+                    double max = price[j][0] / price[0][0];
+                    for (std::size_t k = 1; k < n; ++k) {
+                        double d = price[j][k] / price[0][k];
+                        if (d > max) { max = d; }
+                    }
+                    if (max > barrier || j == m - 1) {
+                        PayoffCall calc(strike);
+                        return calc(max);
+                    }
+                }
+            }
+        }
+    }
 };
 
 

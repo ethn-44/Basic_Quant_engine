@@ -20,10 +20,10 @@ class AsianCallPayoff: public PathPayoff{
         double operator()(const std::vector<double>& path) const override{
             double mn=0;
             std::size_t n=path.size();
-            for (std::size_t i=0; i<n; ++i){
+            for (std::size_t i=1; i<n; ++i){
                 mn+=path[i];
             }
-            return std::max(mn/n-strike_,0.0);
+            return std::max(mn/static_cast<double>(n-1)-strike_,0.0);
         }
 };
 class AsianPutPayoff: public PathPayoff{
@@ -36,10 +36,10 @@ class AsianPutPayoff: public PathPayoff{
         double operator()(const std::vector<double>& path) const override{
             double mn=0;
             std::size_t n=path.size();
-            for (std::size_t i=0; i<n; ++i){
+            for (std::size_t i=1; i<n; ++i){
                 mn+=path[i];
             }
-            return std::max(strike_-mn/n,0.0);
+            return std::max(strike_-mn/static_cast<double>(n-1),0.0);
         }
 };
 ////////////////////////////////////BARRIER/////////////////////////
@@ -54,7 +54,7 @@ public:
 
     double operator()(const std::vector<double>& path) const override {
         std::size_t n=path.size();
-        for (std::size_t i=0;i<n;++i){
+        for (std::size_t i=1;i<n;++i){
             if (path[i]>=barrier_)
                 return 0;
         }
@@ -72,7 +72,7 @@ public:
 
     double operator()(const std::vector<double>& path) const override {
         std::size_t n=path.size();
-        for (std::size_t i=0;i<n;++i){
+        for (std::size_t i=1;i<n;++i){
             if (path[i]>=barrier_)
                 return 0;
         }
@@ -91,7 +91,7 @@ public:
 
     double operator()(const std::vector<double>& path) const override {
         std::size_t n=path.size();
-        for (std::size_t i=0;i<n;++i){
+        for (std::size_t i=1;i<n;++i){
             if (path[i]<=barrier_)
                 return 0;
         }
@@ -99,7 +99,6 @@ public:
     }
 };
 
-// 4. Down-and-Out Put (Barrière en dessous, désactivée si spot <= barrier)
 class BarrierDownAndOutPutPayoff : public PathPayoff {
 private:
     double strike_;
@@ -111,7 +110,7 @@ public:
 
     double operator()(const std::vector<double>& path) const override {
         std::size_t n=path.size();
-        for (std::size_t i=0;i<n;++i){
+        for (std::size_t i=1;i<n;++i){
             if (path[i]<=barrier_)
                 return 0;
         }
