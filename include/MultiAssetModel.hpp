@@ -22,6 +22,16 @@ class MultiAsset{
     L_ = M.L;
     D_ = M.D;
     }
+    void set_volatilities(const std::vector<double>& vol) {
+    vol_ = vol;
+    }
+
+    void update_covariance_and_crout(const std::vector<std::vector<double>>& cov_var) {
+        cov_var_ = cov_var;
+        decomposition M = Crout_decompo(cov_var_);
+        L_ = M.L;
+        D_ = M.D;
+    }
     std::vector<std::vector<double>> price_Assets_bs(double maturity, std::size_t num_steps, std::mt19937_64& rng) const {
         double dt = maturity / static_cast<double>(num_steps);
         std::normal_distribution<double> dist(0.0, 1.0);
