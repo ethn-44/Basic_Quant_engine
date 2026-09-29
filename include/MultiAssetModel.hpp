@@ -4,7 +4,7 @@
 #include <cmath>
 #include <vector>
 #include <random>
-#include <omp.h>
+
 class MultiAsset{
     private : 
     std::vector<std::vector<double>> cov_var_;
@@ -22,7 +22,6 @@ class MultiAsset{
     L_ = M.L;
     D_ = M.D;
     }
-
     std::vector<std::vector<double>> price_Assets_bs(double maturity, std::size_t num_steps, std::mt19937_64& rng) const {
         double dt = maturity / static_cast<double>(num_steps);
         std::normal_distribution<double> dist(0.0, 1.0);
@@ -68,6 +67,42 @@ class MultiAsset{
                 double Z_v=rho[j]*X[j]+std::sqrt(1.0-rho[j]*rho[j])*Z_2;
                 vol[i][j]=v_plus + kappa[j]*(theta[j]-v_plus)*dt + xi[j]*std::sqrt(v_plus)*sqdt*Z_v;
                 price[i][j]=price[i-1][j]*std::exp((rate_-v_plus/2.0)*dt+std::sqrt(v_plus)*sqdt*X[j]);
+            }
+        }
+    return price;
+    }
+    std::vector<std::vector<double>> price_Assets_Merton(double maturity, std::size_t num_steps, std::mt19937_64& rng,const std::vector<double> lambda,const std::vector<double> mu, const std::vector<double> delta) const {
+        double dt = maturity / static_cast<double>(num_steps);
+        double sqdt= std::sqrt(dt);
+        std::normal_distribution<double> dist(0.0, 1.0);
+        std::size_t n=spots_.size();
+        std::vector<std::vector<double>> price(num_steps + 1, std::vector<double>(n));
+        price[0]=spots_;
+        std::vector<double> vol;
+        vol=vol_;
+        std::vector<double> drift(n);
+        std::vector<double> k(n);
+        std::vector<double> X(n);
+        std::vector<double> Z(n);
+        for (std::size_t l=0; l<n;++l){
+            k[l]=std::exp(mu[l]+delta[l]*delta[l]/2.0)-1;
+            drift[l]=(rate_-vol[l]*vol[l]/2-lambda[l]*k[l])*dt; 
+        }
+        for (std::size_t i=1; i<=num_steps;++i){
+            for (std::size_t j=0; j<n;++j){
+                Z[j]=std::sqrt(D_[j][j])*dist(rng);
+                double c=0;
+                for (std::size_t k=0; k<j;++k){
+                    c+=L_[j][k]*Z[k];
+                }
+                X[j]=c+Z[j];
+                std::poisson_distribution<int> poisson_dist(lambda[j] * dt);
+                int num=poisson_dist(rng);
+                double d=1;
+                for (std::size_t m=0;m<num;++m){
+                    d*=std::exp(mu[j] + delta[j] * dist(rng));
+                }
+                price[i][j]=price[i-1][j]*d*std::exp(drift[j]+vol[j]*sqdt*X[j]);
             }
         }
     return price;
