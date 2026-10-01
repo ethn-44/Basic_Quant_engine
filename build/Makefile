@@ -129,6 +129,54 @@ quant_engine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/build
 .PHONY : quant_engine/fast
 
+Calib_cost.o: Calib_cost.cpp.o
+.PHONY : Calib_cost.o
+
+# target to build an object file
+Calib_cost.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Calib_cost.cpp.o
+.PHONY : Calib_cost.cpp.o
+
+Calib_cost.i: Calib_cost.cpp.i
+.PHONY : Calib_cost.i
+
+# target to preprocess a source file
+Calib_cost.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Calib_cost.cpp.i
+.PHONY : Calib_cost.cpp.i
+
+Calib_cost.s: Calib_cost.cpp.s
+.PHONY : Calib_cost.s
+
+# target to generate assembly for a file
+Calib_cost.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Calib_cost.cpp.s
+.PHONY : Calib_cost.cpp.s
+
+Nelder_Meadsolver.o: Nelder_Meadsolver.cpp.o
+.PHONY : Nelder_Meadsolver.o
+
+# target to build an object file
+Nelder_Meadsolver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Nelder_Meadsolver.cpp.o
+.PHONY : Nelder_Meadsolver.cpp.o
+
+Nelder_Meadsolver.i: Nelder_Meadsolver.cpp.i
+.PHONY : Nelder_Meadsolver.i
+
+# target to preprocess a source file
+Nelder_Meadsolver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Nelder_Meadsolver.cpp.i
+.PHONY : Nelder_Meadsolver.cpp.i
+
+Nelder_Meadsolver.s: Nelder_Meadsolver.cpp.s
+.PHONY : Nelder_Meadsolver.s
+
+# target to generate assembly for a file
+Nelder_Meadsolver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Nelder_Meadsolver.cpp.s
+.PHONY : Nelder_Meadsolver.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +210,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... quant_engine"
+	@echo "... Calib_cost.o"
+	@echo "... Calib_cost.i"
+	@echo "... Calib_cost.s"
+	@echo "... Nelder_Meadsolver.o"
+	@echo "... Nelder_Meadsolver.i"
+	@echo "... Nelder_Meadsolver.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

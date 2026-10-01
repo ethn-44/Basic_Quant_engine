@@ -3,6 +3,8 @@ quant_engine: \
   /usr/lib/gcc/x86_64-linux-gnu/15/../../../x86_64-linux-gnu/crti.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o \
   CMakeFiles/quant_engine.dir/main.cpp.o \
+  CMakeFiles/quant_engine.dir/Calib_cost.cpp.o \
+  CMakeFiles/quant_engine.dir/Nelder_Meadsolver.cpp.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/libgomp.so \
   /usr/lib/x86_64-linux-gnu/libpthread.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
@@ -40,6 +42,10 @@ quant_engine: \
 /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o:
 
 CMakeFiles/quant_engine.dir/main.cpp.o:
+
+CMakeFiles/quant_engine.dir/Calib_cost.cpp.o:
+
+CMakeFiles/quant_engine.dir/Nelder_Meadsolver.cpp.o:
 
 /usr/lib/gcc/x86_64-linux-gnu/15/libgomp.so:
 

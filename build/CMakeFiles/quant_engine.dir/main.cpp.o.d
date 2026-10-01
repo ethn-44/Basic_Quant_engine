@@ -231,4 +231,10 @@ CMakeFiles/quant_engine.dir/main.cpp.o: \
  /home/ethan/projects/quant-engine-cpp/include/MonteCarlo.hpp \
  /home/ethan/projects/quant-engine-cpp/include/PathPayoff.hpp \
  /home/ethan/projects/quant-engine-cpp/include/Heston.hpp \
- /home/ethan/projects/quant-engine-cpp/include/Merton.hpp
+ /home/ethan/projects/quant-engine-cpp/include/Merton.hpp \
+ /home/ethan/projects/quant-engine-cpp/include/Calib_cost.hpp \
+ /home/ethan/projects/quant-engine-cpp/include/MultiAssetPayoff.hpp \
+ /home/ethan/projects/quant-engine-cpp/include/MultiAssetModel.hpp \
+ /home/ethan/projects/quant-engine-cpp/include/MatrixCrout.hpp \
+ /home/ethan/projects/quant-engine-cpp/include/Nelder_Meadsolver.hpp \
+ /home/ethan/projects/quant-engine-cpp/include/Calib_cost.hpp
