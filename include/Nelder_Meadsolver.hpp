@@ -2,7 +2,7 @@
 #define NELDER_MEADSOLVER_HPP
 #include <vector>
 #include <cstddef>
-#include "CalibrationObjective.hpp"
+#include "Calib_cost.hpp"
 
 class NelderMeadSolver {
 private:
@@ -22,7 +22,7 @@ public:
     std::vector<double> expand(const std::vector<double>& centroid, const std::vector<double>& reflected, double gamma = 2.0) const;
     std::vector<double> contract(const std::vector<double>& centroid, const std::vector<double>& point, double beta = 0.5) const;
     void shrink(std::vector<std::vector<double>>& simplex, const CalibrationObjective& cost_fn, double delta = 0.5) const;
-
+    void sort_simplex(std::vector<std::vector<double>>& simplex) const;
     std::vector<double> solve(const CalibrationObjective& cost_fn,const std::vector<double>& initial_params,double step = 0.05) const;
 };
 #endif

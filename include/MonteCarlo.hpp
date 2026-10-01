@@ -56,7 +56,7 @@ class MonteCarloEngine{
             #pragma omp for reduction(+:c)
             for (std::size_t i = 0; i < num_sims; ++i) {
                 auto path = model.generate_path(maturity, num_steps, local_gen);
-                if constexpr (std::is_invocable_v<PayoffType, const std::vector<double>&>) {
+                if constexpr (std::is_invocable_v<PayoffType, const std::vector<std::vector<double>>&>) {
                     c += payoff(path);
                 } 
                 else {

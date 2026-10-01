@@ -15,22 +15,35 @@ class MultiAsset{
     std::vector<std::vector<double>> D_;
     std::vector<std::vector<double>> L_;
     public :
-
-    explicit MultiAsset(const std::vector<double>& spots,const std::vector<double>& vol,double rate,const std::vector<std::vector<double>>& cov_var): spots_(spots),vol_(vol),rate_(rate),cov_var_(cov_var)
-    {
+    
+   explicit MultiAsset(const std::vector<double>& spots,const std::vector<double>& vol,double rate,const std::vector<std::vector<double>>& cov_var)
+        : cov_var_(cov_var),spots_(spots),vol_(vol),rate_(rate){
     decomposition M = Crout_decompo(cov_var_);
     L_ = M.L;
     D_ = M.D;
     }
-    void set_volatilities(const std::vector<double>& vol) {
-    vol_ = vol;
+    inline double rate() const {
+    return rate_;
+    }
+    template <typename Matrix>
+    void update_covariance_and_crout(const Matrix& new_cov) {
+        this->cov_var_ = new_cov;
+        decomposition M = Crout_decompo(new_cov);
+        this->L_ = M.L;
+        this->D_ = M.D;
     }
 
-    void update_covariance_and_crout(const std::vector<std::vector<double>>& cov_var) {
-        cov_var_ = cov_var;
-        decomposition M = Crout_decompo(cov_var_);
-        L_ = M.L;
-        D_ = M.D;
+    void set_volatilities(const std::vector<double>& sigmas) {
+    this->vol_ = sigmas; 
+    }
+    std::vector<std::vector<double>> generate_path(double maturity, std::size_t num_steps, std::mt19937_64& rng) const {
+    
+    std::size_t n = spots_.size();
+    std::vector<double> default_lambda(n, 0.1);
+    std::vector<double> default_mu(n, 0.0);   
+    std::vector<double> default_delta(n, 0.2); 
+
+    return price_Assets_Merton(maturity, num_steps, rng, default_lambda, default_mu, default_delta);
     }
     std::vector<std::vector<double>> price_Assets_bs(double maturity, std::size_t num_steps, std::mt19937_64& rng) const {
         double dt = maturity / static_cast<double>(num_steps);
@@ -107,7 +120,7 @@ class MultiAsset{
                 }
                 X[j]=c+Z[j];
                 std::poisson_distribution<int> poisson_dist(lambda[j] * dt);
-                int num=poisson_dist(rng);
+                std::size_t num=poisson_dist(rng);
                 double d=1;
                 for (std::size_t m=0;m<num;++m){
                     d*=std::exp(mu[j] + delta[j] * dist(rng));

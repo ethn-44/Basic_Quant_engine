@@ -11,64 +11,56 @@
 #include "PathPayoff.hpp"
 #include "Heston.hpp"
 #include "Merton.hpp"
+#include "Calib_cost.hpp"
+#include "Nelder_Meadsolver.hpp"
 using std::cout;
 using std::endl;
-
-
-template <typename Func>
-auto measure_execution(Func&& func) {
-    auto start = std::chrono::high_resolution_clock::now();
-    auto result = func();
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double, std::milli> elapsed = end - start;
-    return std::make_pair(result, elapsed.count());
+template <typename Params>
+inline void print_results(const Params& calibrated_params, double final_cost, double elapsed_sec) {
+    std::cout << "\n--- FIN DE LA CALIBRATION (" << elapsed_sec << "s) ---\n";
+    std::cout << std::fixed << std::setprecision(4);
+    std::cout << "Volatilite 1 : " << calibrated_params[0] << "\n";
+    std::cout << "Volatilite 2 : " << calibrated_params[1] << "\n";
+    std::cout << "Correlation  : " << calibrated_params[2] << "\n";
+    std::cout << "Cout final   : " << final_cost << "\n";
 }
-
 int main() {
-    double spot = 100.0;
-    double strike = 100.0;
-    double rate = 0.05;
-    double vol = 0.20;
-    double maturity = 1.0;
-    std::size_t num_sims = 50000;
-    std::size_t num_steps = 252;
+    // 1. Instanciation des dependances reelles
+    std::vector<double> spots = {100.0, 100.0};
+    std::vector<double> vols_init = {0.20, 0.20};
+    double rate = 0.03;
+    std::vector<std::vector<double>> cov = {{0.04, 0.01}, {0.01, 0.04}};
 
-    MonteCarloEngine mc_engine(42);
-    GreeksEngine greeks_engine(mc_engine);
+    MultiAsset model(spots, vols_init, rate, cov);
+    MonteCarloEngine mc_engine;
+    MultiAssetsPayoff payoff({false, false}, false);
 
-    PayoffPut put_payoff(strike);
+    // 2. Donnees de marche de test
+    std::vector<double> market_prices = {10.5, 8.2};
+    std::vector<double> strike_list = {1.0, 1.05};
+    std::vector<double> barrier_list = {-1.0, -1.0};
+    std::vector<bool> is_put_list = {false, false};
+    std::vector<double> maturity_list = {1.0, 1.0};
 
-    std::cout << "=== 1. TEST BLACK-SCHOLES & GREEQUES ===" << std::endl;
-    BlackScholesModel bs_model(spot, rate, vol);
+    // 3. Vrai objet de calibration
+    CalibrationObjective cost_fn(model, mc_engine, payoff, market_prices, spots, 
+                                 2000, 50, strike_list, barrier_list, 
+                                 is_put_list, maturity_list, rate);
+
+    // 4. Solveur Nelder-Mead
+    NelderMeadSolver solver(1.0, 2.0, 0.5, 0.5, 1e-4, 100);
+    std::vector<double> initial_params = {0.15, 0.15, 0.20}; // [vol1, vol2, rho]
+
+    std::cout << "--- DEBUT DE LA CALIBRATION ---" << std::endl;
     
-    double bs_price = mc_engine.price_path_dependant(bs_model, put_payoff, maturity, num_sims, num_steps); // ou price_bs
-    std::cout << "Prix Put Européen (BS) : " << bs_price << std::endl;
-
-    GreeksResult bs_greeks = greeks_engine.calculate(bs_model, put_payoff, maturity, num_sims);
-    std::cout << "Delta : " << bs_greeks.delta << " | Gamma : " << bs_greeks.gamma 
-              << " | Vega : " << bs_greeks.vega << " | Rho : " << bs_greeks.rho << std::endl;
-
-    std::cout << "\n=== 2. TEST MODELE DE MERTON (JUMP-DIFFUSION) ===" << std::endl;
+    auto start = std::chrono::high_resolution_clock::now();
+    std::vector<double> calibrated_params = solver.solve(cost_fn, initial_params, 0.80);
+    auto end = std::chrono::high_resolution_clock::now();
     
-    MertonModel merton_model(spot, rate, vol, 1.0, -0.10, 0.15);
-    mc_engine.export_paths_to_csv("simulation_paths.csv", merton_model, 1.0, 252, 50);
-    mc_engine.reset_seed();
-    double merton_price = mc_engine.price_path_dependant(merton_model, put_payoff, maturity, num_sims, num_steps);
-    std::cout << "Prix Put Merton : " << merton_price << std::endl;
+    double elapsed = std::chrono::duration<double>(end - start).count();
+    double final_cost = cost_fn(calibrated_params);
 
-    GreeksResult merton_greeks = greeks_engine.calculate(merton_model, put_payoff, maturity, num_sims);
-    std::cout << "Delta Merton : " << merton_greeks.delta << " | Vega Merton : " << merton_greeks.vega << std::endl;
-
-    std::cout << "\n=== 3. TEST MODELE DE HESTON (VOL STOCHASTIQUE) ===" << std::endl;
-    
-    HestonModel heston_model(spot, rate, 0.04, 2.0, 0.04, 0.3, -0.7);
-    
-    mc_engine.reset_seed();
-    double heston_price = mc_engine.price_path_dependant(heston_model, put_payoff, maturity, num_sims, num_steps);
-    std::cout << "Prix Put Heston : " << heston_price << std::endl;
-
-    GreeksResult heston_greeks = greeks_engine.calculate(heston_model, put_payoff, maturity, num_sims);
-    std::cout << "Delta Heston : " << heston_greeks.delta << " | Vega Heston : " << heston_greeks.vega << std::endl;
+    print_results(calibrated_params, final_cost, elapsed);
 
     return 0;
 }

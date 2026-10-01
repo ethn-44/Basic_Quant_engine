@@ -4,13 +4,13 @@
 #include <cmath>
 #include<algorithm>
 #include <omp.h>
-double phi0(double x,double initial_spot){
+inline double phi0(double x,double initial_spot){
     return std::exp(-x/(2.0*initial_spot));
 }
-double phi1(double x,double initial_spot){
+inline double phi1(double x,double initial_spot){
     return std::exp(-x/(2.0*initial_spot))*(1.0-x/initial_spot);
 }
-double phi2(double x,double initial_spot){
+inline double phi2(double x,double initial_spot){
     return std::exp(-x/(2.0*initial_spot))*(1.0-2.0*x/initial_spot+ (x/initial_spot)*(x/initial_spot)/2.0);
 } 
 

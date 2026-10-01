@@ -3,14 +3,15 @@
 
 #include <cmath>
 #include <vector>
+#include <cstddef>
 
 struct decomposition{
     std::vector<std::vector<double>> D;
     std::vector<std::vector<double>> L;
 };
 
-decomposition Crout_decompo(const std::vector<std::vector<double>>& A){
-    int n= A.size();
+inline decomposition Crout_decompo(const std::vector<std::vector<double>>& A){
+    std::size_t n = A.size();
     decomposition Crout_dec;
     Crout_dec.D = std::vector<std::vector<double>>(n, std::vector<double>(n, 0.0));
     Crout_dec.L = std::vector<std::vector<double>>(n, std::vector<double>(n, 0.0));
