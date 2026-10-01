@@ -48,13 +48,11 @@ int main() {
                                  is_put_list, maturity_list, rate);
 
     // 4. Solveur Nelder-Mead
-    NelderMeadSolver solver(1.0, 2.0, 0.5, 0.5, 1e-4, 100);
+    NelderMeadSolver solver(1.0, 2.0, 0.5, 0.5, 1e-4, 1000);
     std::vector<double> initial_params = {0.15, 0.15, 0.20}; // [vol1, vol2, rho]
 
-    std::cout << "--- DEBUT DE LA CALIBRATION ---" << std::endl;
-    
     auto start = std::chrono::high_resolution_clock::now();
-    std::vector<double> calibrated_params = solver.solve(cost_fn, initial_params, 0.80);
+    std::vector<double> calibrated_params = solver.solve(cost_fn, initial_params, 0.30);
     auto end = std::chrono::high_resolution_clock::now();
     
     double elapsed = std::chrono::duration<double>(end - start).count();
