@@ -4,6 +4,15 @@
 #include <cmath>
 #include <vector>
 #include <random>
+struct specific_params {
+    std::vector<double> kappa;
+    std::vector<double> theta;
+    std::vector<double> xi;
+    std::vector<double> rho;
+    std::vector<double> lambda;
+    std::vector<double> mu;
+    std::vector<double> delta;
+};
 
 class MultiAsset{
     private : 
@@ -11,13 +20,14 @@ class MultiAsset{
     std::vector<double> spots_;
     std::vector<double> vol_;
     double rate_;
+    specific_params spec_params_;
     decomposition M_;
     std::vector<std::vector<double>> D_;
     std::vector<std::vector<double>> L_;
     public :
-    
-   explicit MultiAsset(const std::vector<double>& spots,const std::vector<double>& vol,double rate,const std::vector<std::vector<double>>& cov_var)
-        : cov_var_(cov_var),spots_(spots),vol_(vol),rate_(rate){
+    enum Type { BS, HESTON, MERTON };
+   explicit MultiAsset(const std::vector<double>& spots,const std::vector<double>& vol,double rate,const std::vector<std::vector<double>>& cov_var,const specific_params spec_params)
+        : cov_var_(cov_var),spots_(spots),vol_(vol),rate_(rate),spec_params_(spec_params){
     decomposition M = Crout_decompo(cov_var_);
     L_ = M.L;
     D_ = M.D;
@@ -66,7 +76,11 @@ class MultiAsset{
         }
     return price;
     }
-    std::vector<std::vector<double>> price_Assets_Heston(double maturity, std::size_t num_steps, std::mt19937_64& rng,const std::vector<double>& kappa,const std::vector<double>& theta, const std::vector<double>& xi,const std::vector<double>& rho) const {
+    std::vector<std::vector<double>> price_Assets_Heston(double maturity, std::size_t num_steps, std::mt19937_64& rng) const {
+        std::vector<double> kappa=spec_params_.kappa;
+        std::vector<double> theta=spec_params_.theta;
+        std::vector<double> xi=spec_params_.xi;
+        std::vector<double> rho=spec_params_.rho;
         double dt = maturity / static_cast<double>(num_steps);
         double sqdt= std::sqrt(dt);
         std::normal_distribution<double> dist(0.0, 1.0);
@@ -94,7 +108,10 @@ class MultiAsset{
         }
     return price;
     }
-    std::vector<std::vector<double>> price_Assets_Merton(double maturity, std::size_t num_steps, std::mt19937_64& rng,const std::vector<double> lambda,const std::vector<double> mu, const std::vector<double> delta) const {
+    std::vector<std::vector<double>> price_Assets_Merton(double maturity, std::size_t num_steps, std::mt19937_64& rng) const {
+        std::vector<double> lambda=spec_params_.lambda;
+        std::vector<double> mu=spec_params_.mu;
+        std::vector<double> delta=spec_params_.delta;
         double dt = maturity / static_cast<double>(num_steps);
         double sqdt= std::sqrt(dt);
         std::normal_distribution<double> dist(0.0, 1.0);
@@ -130,8 +147,14 @@ class MultiAsset{
         }
     return price;
     }
-    
-
+    std::vector<std::vector<double>> simulate_paths(double maturity,std::size_t num_steps, std::mt19937_64& rng) const {
+    switch (model_type_) {
+            case BS:     return price_Assets_bs(maturity, num_steps, rng);
+            case HESTON: return price_Assets_Heston(maturity, num_steps, rng);
+            case MERTON: return price_Assets_Merton(maturity, num_steps, rng);
+        }
+    return {};
+}
 };
 
 
