@@ -15,6 +15,8 @@ struct specific_params {
 };
 
 class MultiAsset{
+    public :
+    enum Type { BS, HESTON, MERTON };
     private : 
     std::vector<std::vector<double>> cov_var_;
     std::vector<double> spots_;
@@ -24,9 +26,9 @@ class MultiAsset{
     decomposition M_;
     std::vector<std::vector<double>> D_;
     std::vector<std::vector<double>> L_;
+    Type model_type_;
     public :
-    enum Type { BS, HESTON, MERTON };
-   explicit MultiAsset(const std::vector<double>& spots,const std::vector<double>& vol,double rate,const std::vector<std::vector<double>>& cov_var,const specific_params spec_params)
+    explicit MultiAsset(const std::vector<double>& spots,const std::vector<double>& vol,double rate,const std::vector<std::vector<double>>& cov_var,const specific_params spec_params)
         : cov_var_(cov_var),spots_(spots),vol_(vol),rate_(rate),spec_params_(spec_params){
     decomposition M = Crout_decompo(cov_var_);
     L_ = M.L;
@@ -53,7 +55,7 @@ class MultiAsset{
     std::vector<double> default_mu(n, 0.0);   
     std::vector<double> default_delta(n, 0.2); 
 
-    return price_Assets_Merton(maturity, num_steps, rng, default_lambda, default_mu, default_delta);
+    return price_Assets_Merton(maturity, num_steps, rng);
     }
     std::vector<std::vector<double>> price_Assets_bs(double maturity, std::size_t num_steps, std::mt19937_64& rng) const {
         double dt = maturity / static_cast<double>(num_steps);
