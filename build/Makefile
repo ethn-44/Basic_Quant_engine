@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/ethan/projects/quant-engine-cpp/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/bin/ctest $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -84,6 +94,51 @@ rebuild_cache:
 # Special rule for the target rebuild_cache
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Available install components are: \"gmock\" \"gtest\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -129,12 +184,78 @@ quant_engine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/build
 .PHONY : quant_engine/fast
 
+#=============================================================================
+# Target rules for targets named unit_tests
+
+# Build rule for target.
+unit_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 unit_tests
+.PHONY : unit_tests
+
+# fast build rule for target.
+unit_tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/build
+.PHONY : unit_tests/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
 Calib_cost.o: Calib_cost.cpp.o
 .PHONY : Calib_cost.o
 
 # target to build an object file
 Calib_cost.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Calib_cost.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/Calib_cost.cpp.o
 .PHONY : Calib_cost.cpp.o
 
 Calib_cost.i: Calib_cost.cpp.i
@@ -143,6 +264,7 @@ Calib_cost.i: Calib_cost.cpp.i
 # target to preprocess a source file
 Calib_cost.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Calib_cost.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/Calib_cost.cpp.i
 .PHONY : Calib_cost.cpp.i
 
 Calib_cost.s: Calib_cost.cpp.s
@@ -151,6 +273,7 @@ Calib_cost.s: Calib_cost.cpp.s
 # target to generate assembly for a file
 Calib_cost.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Calib_cost.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/Calib_cost.cpp.s
 .PHONY : Calib_cost.cpp.s
 
 Nelder_Meadsolver.o: Nelder_Meadsolver.cpp.o
@@ -159,6 +282,7 @@ Nelder_Meadsolver.o: Nelder_Meadsolver.cpp.o
 # target to build an object file
 Nelder_Meadsolver.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Nelder_Meadsolver.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/Nelder_Meadsolver.cpp.o
 .PHONY : Nelder_Meadsolver.cpp.o
 
 Nelder_Meadsolver.i: Nelder_Meadsolver.cpp.i
@@ -167,6 +291,7 @@ Nelder_Meadsolver.i: Nelder_Meadsolver.cpp.i
 # target to preprocess a source file
 Nelder_Meadsolver.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Nelder_Meadsolver.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/Nelder_Meadsolver.cpp.i
 .PHONY : Nelder_Meadsolver.cpp.i
 
 Nelder_Meadsolver.s: Nelder_Meadsolver.cpp.s
@@ -175,7 +300,35 @@ Nelder_Meadsolver.s: Nelder_Meadsolver.cpp.s
 # target to generate assembly for a file
 Nelder_Meadsolver.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Nelder_Meadsolver.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/Nelder_Meadsolver.cpp.s
 .PHONY : Nelder_Meadsolver.cpp.s
+
+Risk_calc.o: Risk_calc.cpp.o
+.PHONY : Risk_calc.o
+
+# target to build an object file
+Risk_calc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Risk_calc.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/Risk_calc.cpp.o
+.PHONY : Risk_calc.cpp.o
+
+Risk_calc.i: Risk_calc.cpp.i
+.PHONY : Risk_calc.i
+
+# target to preprocess a source file
+Risk_calc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Risk_calc.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/Risk_calc.cpp.i
+.PHONY : Risk_calc.cpp.i
+
+Risk_calc.s: Risk_calc.cpp.s
+.PHONY : Risk_calc.s
+
+# target to generate assembly for a file
+Risk_calc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/Risk_calc.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/Risk_calc.cpp.s
+.PHONY : Risk_calc.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -201,6 +354,342 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/quant_engine.dir/build.make CMakeFiles/quant_engine.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+test/BlackScholes_test.o: test/BlackScholes_test.cpp.o
+.PHONY : test/BlackScholes_test.o
+
+# target to build an object file
+test/BlackScholes_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/BlackScholes_test.cpp.o
+.PHONY : test/BlackScholes_test.cpp.o
+
+test/BlackScholes_test.i: test/BlackScholes_test.cpp.i
+.PHONY : test/BlackScholes_test.i
+
+# target to preprocess a source file
+test/BlackScholes_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/BlackScholes_test.cpp.i
+.PHONY : test/BlackScholes_test.cpp.i
+
+test/BlackScholes_test.s: test/BlackScholes_test.cpp.s
+.PHONY : test/BlackScholes_test.s
+
+# target to generate assembly for a file
+test/BlackScholes_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/BlackScholes_test.cpp.s
+.PHONY : test/BlackScholes_test.cpp.s
+
+test/Calb_cost_test.o: test/Calb_cost_test.cpp.o
+.PHONY : test/Calb_cost_test.o
+
+# target to build an object file
+test/Calb_cost_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Calb_cost_test.cpp.o
+.PHONY : test/Calb_cost_test.cpp.o
+
+test/Calb_cost_test.i: test/Calb_cost_test.cpp.i
+.PHONY : test/Calb_cost_test.i
+
+# target to preprocess a source file
+test/Calb_cost_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Calb_cost_test.cpp.i
+.PHONY : test/Calb_cost_test.cpp.i
+
+test/Calb_cost_test.s: test/Calb_cost_test.cpp.s
+.PHONY : test/Calb_cost_test.s
+
+# target to generate assembly for a file
+test/Calb_cost_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Calb_cost_test.cpp.s
+.PHONY : test/Calb_cost_test.cpp.s
+
+test/Heston_test.o: test/Heston_test.cpp.o
+.PHONY : test/Heston_test.o
+
+# target to build an object file
+test/Heston_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Heston_test.cpp.o
+.PHONY : test/Heston_test.cpp.o
+
+test/Heston_test.i: test/Heston_test.cpp.i
+.PHONY : test/Heston_test.i
+
+# target to preprocess a source file
+test/Heston_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Heston_test.cpp.i
+.PHONY : test/Heston_test.cpp.i
+
+test/Heston_test.s: test/Heston_test.cpp.s
+.PHONY : test/Heston_test.s
+
+# target to generate assembly for a file
+test/Heston_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Heston_test.cpp.s
+.PHONY : test/Heston_test.cpp.s
+
+test/MatrixCrout_test.o: test/MatrixCrout_test.cpp.o
+.PHONY : test/MatrixCrout_test.o
+
+# target to build an object file
+test/MatrixCrout_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MatrixCrout_test.cpp.o
+.PHONY : test/MatrixCrout_test.cpp.o
+
+test/MatrixCrout_test.i: test/MatrixCrout_test.cpp.i
+.PHONY : test/MatrixCrout_test.i
+
+# target to preprocess a source file
+test/MatrixCrout_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MatrixCrout_test.cpp.i
+.PHONY : test/MatrixCrout_test.cpp.i
+
+test/MatrixCrout_test.s: test/MatrixCrout_test.cpp.s
+.PHONY : test/MatrixCrout_test.s
+
+# target to generate assembly for a file
+test/MatrixCrout_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MatrixCrout_test.cpp.s
+.PHONY : test/MatrixCrout_test.cpp.s
+
+test/MertonModel_test.o: test/MertonModel_test.cpp.o
+.PHONY : test/MertonModel_test.o
+
+# target to build an object file
+test/MertonModel_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MertonModel_test.cpp.o
+.PHONY : test/MertonModel_test.cpp.o
+
+test/MertonModel_test.i: test/MertonModel_test.cpp.i
+.PHONY : test/MertonModel_test.i
+
+# target to preprocess a source file
+test/MertonModel_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MertonModel_test.cpp.i
+.PHONY : test/MertonModel_test.cpp.i
+
+test/MertonModel_test.s: test/MertonModel_test.cpp.s
+.PHONY : test/MertonModel_test.s
+
+# target to generate assembly for a file
+test/MertonModel_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MertonModel_test.cpp.s
+.PHONY : test/MertonModel_test.cpp.s
+
+test/MonteCarlo_test.o: test/MonteCarlo_test.cpp.o
+.PHONY : test/MonteCarlo_test.o
+
+# target to build an object file
+test/MonteCarlo_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MonteCarlo_test.cpp.o
+.PHONY : test/MonteCarlo_test.cpp.o
+
+test/MonteCarlo_test.i: test/MonteCarlo_test.cpp.i
+.PHONY : test/MonteCarlo_test.i
+
+# target to preprocess a source file
+test/MonteCarlo_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MonteCarlo_test.cpp.i
+.PHONY : test/MonteCarlo_test.cpp.i
+
+test/MonteCarlo_test.s: test/MonteCarlo_test.cpp.s
+.PHONY : test/MonteCarlo_test.s
+
+# target to generate assembly for a file
+test/MonteCarlo_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MonteCarlo_test.cpp.s
+.PHONY : test/MonteCarlo_test.cpp.s
+
+test/MultiAssetModel.o: test/MultiAssetModel.cpp.o
+.PHONY : test/MultiAssetModel.o
+
+# target to build an object file
+test/MultiAssetModel.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MultiAssetModel.cpp.o
+.PHONY : test/MultiAssetModel.cpp.o
+
+test/MultiAssetModel.i: test/MultiAssetModel.cpp.i
+.PHONY : test/MultiAssetModel.i
+
+# target to preprocess a source file
+test/MultiAssetModel.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MultiAssetModel.cpp.i
+.PHONY : test/MultiAssetModel.cpp.i
+
+test/MultiAssetModel.s: test/MultiAssetModel.cpp.s
+.PHONY : test/MultiAssetModel.s
+
+# target to generate assembly for a file
+test/MultiAssetModel.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MultiAssetModel.cpp.s
+.PHONY : test/MultiAssetModel.cpp.s
+
+test/MutliAssetPayoff_test.o: test/MutliAssetPayoff_test.cpp.o
+.PHONY : test/MutliAssetPayoff_test.o
+
+# target to build an object file
+test/MutliAssetPayoff_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MutliAssetPayoff_test.cpp.o
+.PHONY : test/MutliAssetPayoff_test.cpp.o
+
+test/MutliAssetPayoff_test.i: test/MutliAssetPayoff_test.cpp.i
+.PHONY : test/MutliAssetPayoff_test.i
+
+# target to preprocess a source file
+test/MutliAssetPayoff_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MutliAssetPayoff_test.cpp.i
+.PHONY : test/MutliAssetPayoff_test.cpp.i
+
+test/MutliAssetPayoff_test.s: test/MutliAssetPayoff_test.cpp.s
+.PHONY : test/MutliAssetPayoff_test.s
+
+# target to generate assembly for a file
+test/MutliAssetPayoff_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/MutliAssetPayoff_test.cpp.s
+.PHONY : test/MutliAssetPayoff_test.cpp.s
+
+test/Nelder_Meadsolver_test.o: test/Nelder_Meadsolver_test.cpp.o
+.PHONY : test/Nelder_Meadsolver_test.o
+
+# target to build an object file
+test/Nelder_Meadsolver_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Nelder_Meadsolver_test.cpp.o
+.PHONY : test/Nelder_Meadsolver_test.cpp.o
+
+test/Nelder_Meadsolver_test.i: test/Nelder_Meadsolver_test.cpp.i
+.PHONY : test/Nelder_Meadsolver_test.i
+
+# target to preprocess a source file
+test/Nelder_Meadsolver_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Nelder_Meadsolver_test.cpp.i
+.PHONY : test/Nelder_Meadsolver_test.cpp.i
+
+test/Nelder_Meadsolver_test.s: test/Nelder_Meadsolver_test.cpp.s
+.PHONY : test/Nelder_Meadsolver_test.s
+
+# target to generate assembly for a file
+test/Nelder_Meadsolver_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Nelder_Meadsolver_test.cpp.s
+.PHONY : test/Nelder_Meadsolver_test.cpp.s
+
+test/Pathpayoff_test.o: test/Pathpayoff_test.cpp.o
+.PHONY : test/Pathpayoff_test.o
+
+# target to build an object file
+test/Pathpayoff_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Pathpayoff_test.cpp.o
+.PHONY : test/Pathpayoff_test.cpp.o
+
+test/Pathpayoff_test.i: test/Pathpayoff_test.cpp.i
+.PHONY : test/Pathpayoff_test.i
+
+# target to preprocess a source file
+test/Pathpayoff_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Pathpayoff_test.cpp.i
+.PHONY : test/Pathpayoff_test.cpp.i
+
+test/Pathpayoff_test.s: test/Pathpayoff_test.cpp.s
+.PHONY : test/Pathpayoff_test.s
+
+# target to generate assembly for a file
+test/Pathpayoff_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Pathpayoff_test.cpp.s
+.PHONY : test/Pathpayoff_test.cpp.s
+
+test/Payoff_test.o: test/Payoff_test.cpp.o
+.PHONY : test/Payoff_test.o
+
+# target to build an object file
+test/Payoff_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Payoff_test.cpp.o
+.PHONY : test/Payoff_test.cpp.o
+
+test/Payoff_test.i: test/Payoff_test.cpp.i
+.PHONY : test/Payoff_test.i
+
+# target to preprocess a source file
+test/Payoff_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Payoff_test.cpp.i
+.PHONY : test/Payoff_test.cpp.i
+
+test/Payoff_test.s: test/Payoff_test.cpp.s
+.PHONY : test/Payoff_test.s
+
+# target to generate assembly for a file
+test/Payoff_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Payoff_test.cpp.s
+.PHONY : test/Payoff_test.cpp.s
+
+test/Portfolio_test.o: test/Portfolio_test.cpp.o
+.PHONY : test/Portfolio_test.o
+
+# target to build an object file
+test/Portfolio_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Portfolio_test.cpp.o
+.PHONY : test/Portfolio_test.cpp.o
+
+test/Portfolio_test.i: test/Portfolio_test.cpp.i
+.PHONY : test/Portfolio_test.i
+
+# target to preprocess a source file
+test/Portfolio_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Portfolio_test.cpp.i
+.PHONY : test/Portfolio_test.cpp.i
+
+test/Portfolio_test.s: test/Portfolio_test.cpp.s
+.PHONY : test/Portfolio_test.s
+
+# target to generate assembly for a file
+test/Portfolio_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Portfolio_test.cpp.s
+.PHONY : test/Portfolio_test.cpp.s
+
+test/Risk_calc_test.o: test/Risk_calc_test.cpp.o
+.PHONY : test/Risk_calc_test.o
+
+# target to build an object file
+test/Risk_calc_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Risk_calc_test.cpp.o
+.PHONY : test/Risk_calc_test.cpp.o
+
+test/Risk_calc_test.i: test/Risk_calc_test.cpp.i
+.PHONY : test/Risk_calc_test.i
+
+# target to preprocess a source file
+test/Risk_calc_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Risk_calc_test.cpp.i
+.PHONY : test/Risk_calc_test.cpp.i
+
+test/Risk_calc_test.s: test/Risk_calc_test.cpp.s
+.PHONY : test/Risk_calc_test.s
+
+# target to generate assembly for a file
+test/Risk_calc_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/Risk_calc_test.cpp.s
+.PHONY : test/Risk_calc_test.cpp.s
+
+test/reg_test.o: test/reg_test.cpp.o
+.PHONY : test/reg_test.o
+
+# target to build an object file
+test/reg_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/reg_test.cpp.o
+.PHONY : test/reg_test.cpp.o
+
+test/reg_test.i: test/reg_test.cpp.i
+.PHONY : test/reg_test.i
+
+# target to preprocess a source file
+test/reg_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/reg_test.cpp.i
+.PHONY : test/reg_test.cpp.i
+
+test/reg_test.s: test/reg_test.cpp.s
+.PHONY : test/reg_test.s
+
+# target to generate assembly for a file
+test/reg_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test/reg_test.cpp.s
+.PHONY : test/reg_test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -208,17 +697,72 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... gmock"
+	@echo "... gmock_main"
+	@echo "... gtest"
+	@echo "... gtest_main"
 	@echo "... quant_engine"
+	@echo "... unit_tests"
 	@echo "... Calib_cost.o"
 	@echo "... Calib_cost.i"
 	@echo "... Calib_cost.s"
 	@echo "... Nelder_Meadsolver.o"
 	@echo "... Nelder_Meadsolver.i"
 	@echo "... Nelder_Meadsolver.s"
+	@echo "... Risk_calc.o"
+	@echo "... Risk_calc.i"
+	@echo "... Risk_calc.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... test/BlackScholes_test.o"
+	@echo "... test/BlackScholes_test.i"
+	@echo "... test/BlackScholes_test.s"
+	@echo "... test/Calb_cost_test.o"
+	@echo "... test/Calb_cost_test.i"
+	@echo "... test/Calb_cost_test.s"
+	@echo "... test/Heston_test.o"
+	@echo "... test/Heston_test.i"
+	@echo "... test/Heston_test.s"
+	@echo "... test/MatrixCrout_test.o"
+	@echo "... test/MatrixCrout_test.i"
+	@echo "... test/MatrixCrout_test.s"
+	@echo "... test/MertonModel_test.o"
+	@echo "... test/MertonModel_test.i"
+	@echo "... test/MertonModel_test.s"
+	@echo "... test/MonteCarlo_test.o"
+	@echo "... test/MonteCarlo_test.i"
+	@echo "... test/MonteCarlo_test.s"
+	@echo "... test/MultiAssetModel.o"
+	@echo "... test/MultiAssetModel.i"
+	@echo "... test/MultiAssetModel.s"
+	@echo "... test/MutliAssetPayoff_test.o"
+	@echo "... test/MutliAssetPayoff_test.i"
+	@echo "... test/MutliAssetPayoff_test.s"
+	@echo "... test/Nelder_Meadsolver_test.o"
+	@echo "... test/Nelder_Meadsolver_test.i"
+	@echo "... test/Nelder_Meadsolver_test.s"
+	@echo "... test/Pathpayoff_test.o"
+	@echo "... test/Pathpayoff_test.i"
+	@echo "... test/Pathpayoff_test.s"
+	@echo "... test/Payoff_test.o"
+	@echo "... test/Payoff_test.i"
+	@echo "... test/Payoff_test.s"
+	@echo "... test/Portfolio_test.o"
+	@echo "... test/Portfolio_test.i"
+	@echo "... test/Portfolio_test.s"
+	@echo "... test/Risk_calc_test.o"
+	@echo "... test/Risk_calc_test.i"
+	@echo "... test/Risk_calc_test.s"
+	@echo "... test/reg_test.o"
+	@echo "... test/reg_test.i"
+	@echo "... test/reg_test.s"
 .PHONY : help
 
 

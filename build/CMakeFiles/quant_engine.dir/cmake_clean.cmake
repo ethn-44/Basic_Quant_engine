@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/quant_engine.dir/Calib_cost.cpp.o.d"
   "CMakeFiles/quant_engine.dir/Nelder_Meadsolver.cpp.o"
   "CMakeFiles/quant_engine.dir/Nelder_Meadsolver.cpp.o.d"
+  "CMakeFiles/quant_engine.dir/Risk_calc.cpp.o"
+  "CMakeFiles/quant_engine.dir/Risk_calc.cpp.o.d"
   "CMakeFiles/quant_engine.dir/main.cpp.o"
   "CMakeFiles/quant_engine.dir/main.cpp.o.d"
   "quant_engine"

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ethan/projects/quant-engine-cpp/include
+CXX_INCLUDES = -I/home/ethan/projects/quant-engine-cpp/include -I/home/ethan/projects/quant-engine-cpp/.
 
-CXX_FLAGS = -std=gnu++17 -Wall -Wextra -Wpedantic -fopenmp
+CXX_FLAGS = -std=gnu++17 -fopenmp
 

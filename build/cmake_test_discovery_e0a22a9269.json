@@ -1,0 +1,271 @@
+{
+  "tests": 35,
+  "name": "AllTests",
+  "testsuites": [
+    {
+      "name": "BlackScholesModelTest",
+      "tests": 4,
+      "testsuite": [
+        {
+          "name": "ConstructorAndGetters",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/BlackScholes_test.cpp",
+          "line": 7
+        },
+        {
+          "name": "SpotAtMaturityCalculation",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/BlackScholes_test.cpp",
+          "line": 14
+        },
+        {
+          "name": "WithMethodsReturnNewModifiedModel",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/BlackScholes_test.cpp",
+          "line": 23
+        },
+        {
+          "name": "GeneratePathSizeAndInitialValue",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/BlackScholes_test.cpp",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "name": "CalibrationObjectiveTest",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "OperatorReturnsPenaltyForInvalidConstraints",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Calb_cost_test.cpp",
+          "line": 8
+        }
+      ]
+    },
+    {
+      "name": "HestonModelTest",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "ConstructorAndGetters",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Heston_test.cpp",
+          "line": 6
+        },
+        {
+          "name": "WithMethodsReturnNewModifiedModel",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Heston_test.cpp",
+          "line": 17
+        },
+        {
+          "name": "GeneratePathSizeAndInitialValue",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Heston_test.cpp",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "name": "MatrixCroutTest",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "DecompositionOfSimple2x2Matrix",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/MatrixCrout_test.cpp",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "name": "MertonModelTest",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "ConstructorAndGetters",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/MertonModel_test.cpp",
+          "line": 6
+        },
+        {
+          "name": "WithMethodsReturnNewModifiedModel",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/MertonModel_test.cpp",
+          "line": 16
+        },
+        {
+          "name": "GeneratePathSizeAndInitialValue",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/MertonModel_test.cpp",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "name": "MonteCarloEngineTest",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "PriceBlackScholesReturnsValidPrice",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/MonteCarlo_test.cpp",
+          "line": 9
+        },
+        {
+          "name": "PricePathDependentReturnsValidPrice",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/MonteCarlo_test.cpp",
+          "line": 23
+        },
+        {
+          "name": "ExportPathsToCsvCreatesValidFile",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/MonteCarlo_test.cpp",
+          "line": 40
+        }
+      ]
+    },
+    {
+      "name": "MultiAssetTest",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "ConstructorAndGetters",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/MultiAssetModel.cpp",
+          "line": 6
+        },
+        {
+          "name": "PriceAssetsBsReturnsValidMatrix",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/MultiAssetModel.cpp",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "name": "MultiAssetsPayoffTest",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "EvaluateBasketReturnsCorrectPayoff",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/MutliAssetPayoff_test.cpp",
+          "line": 5
+        },
+        {
+          "name": "EvaluateRainbowCallReturnsCorrectPayoff",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/MutliAssetPayoff_test.cpp",
+          "line": 22
+        }
+      ]
+    },
+    {
+      "name": "NelderMeadSolverTest",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "ReflectCalculatesCorrectPoint",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Nelder_Meadsolver_test.cpp",
+          "line": 15
+        },
+        {
+          "name": "SortSimplexOrdersByCost",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Nelder_Meadsolver_test.cpp",
+          "line": 27
+        }
+      ]
+    },
+    {
+      "name": "PathPayoffTest",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "AsianCallPayoffCalculatesAverageCorrectly",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Pathpayoff_test.cpp",
+          "line": 5
+        },
+        {
+          "name": "BarrierUpAndOutCallTriggersKnockOut",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Pathpayoff_test.cpp",
+          "line": 14
+        },
+        {
+          "name": "BarrierUpAndOutCallSurvivesAndPaysOff",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Pathpayoff_test.cpp",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "name": "PayoffCallTest",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "SpotAboveStrikeReturnsPositivePayoff",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Payoff_test.cpp",
+          "line": 5
+        },
+        {
+          "name": "SpotBelowStrikeReturnsZero",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Payoff_test.cpp",
+          "line": 12
+        },
+        {
+          "name": "PathBasedOperatorUsesLastElement",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Payoff_test.cpp",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "name": "PayoffPutTest",
+      "tests": 3,
+      "testsuite": [
+        {
+          "name": "SpotBelowStrikeReturnsPositivePayoff",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Payoff_test.cpp",
+          "line": 28
+        },
+        {
+          "name": "SpotAboveStrikeReturnsZero",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Payoff_test.cpp",
+          "line": 35
+        },
+        {
+          "name": "PathBasedOperatorUsesLastElement",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Payoff_test.cpp",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "name": "PortfolioTest",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "AddPositionAndGetMaxMaturity",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Portfolio_test.cpp",
+          "line": 19
+        },
+        {
+          "name": "EvaluatePortfolioRiskReturnsValues",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Portfolio_test.cpp",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "name": "RiskCalcTest",
+      "tests": 1,
+      "testsuite": [
+        {
+          "name": "CalculateRiskMetricsReturnsCorrectValues",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/Risk_calc_test.cpp",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "name": "RegTest",
+      "tests": 2,
+      "testsuite": [
+        {
+          "name": "BasisFunctionsEvaluation",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/reg_test.cpp",
+          "line": 6
+        },
+        {
+          "name": "RegressionAndPredictionReturnsCoefficients",
+          "file": "\/home\/ethan\/projects\/quant-engine-cpp\/test\/reg_test.cpp",
+          "line": 19
+        }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 #include "Risk_calc.hpp"
+#include <algorithm>
 
-
-RiskMetrics calculate_risk_metrics(std::vector<double>& portfolio_values, double confidence_level = 0.99){
+RiskMetrics calculate_risk_metrics(std::vector<double>& portfolio_values, double confidence_level){
     double mean=0;
     double alpha = 1.0 - confidence_level;
     double variance=0;

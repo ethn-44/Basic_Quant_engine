@@ -1,6 +1,7 @@
 #ifndef RISK_CALC_HPP
 #define RISK_CALC_HPP
 #include "Portfolio.hpp"
+
 struct RiskMetrics {
     double var;
     double cvar;

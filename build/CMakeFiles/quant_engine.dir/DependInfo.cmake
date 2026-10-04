@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ethan/projects/quant-engine-cpp/Calib_cost.cpp" "CMakeFiles/quant_engine.dir/Calib_cost.cpp.o" "gcc" "CMakeFiles/quant_engine.dir/Calib_cost.cpp.o.d"
   "/home/ethan/projects/quant-engine-cpp/Nelder_Meadsolver.cpp" "CMakeFiles/quant_engine.dir/Nelder_Meadsolver.cpp.o" "gcc" "CMakeFiles/quant_engine.dir/Nelder_Meadsolver.cpp.o.d"
+  "/home/ethan/projects/quant-engine-cpp/Risk_calc.cpp" "CMakeFiles/quant_engine.dir/Risk_calc.cpp.o" "gcc" "CMakeFiles/quant_engine.dir/Risk_calc.cpp.o.d"
   "/home/ethan/projects/quant-engine-cpp/main.cpp" "CMakeFiles/quant_engine.dir/main.cpp.o" "gcc" "CMakeFiles/quant_engine.dir/main.cpp.o.d"
   "" "quant_engine" "gcc" "CMakeFiles/quant_engine.dir/link.d"
   )

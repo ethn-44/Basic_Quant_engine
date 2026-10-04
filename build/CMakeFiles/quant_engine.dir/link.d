@@ -5,6 +5,7 @@ quant_engine: \
   CMakeFiles/quant_engine.dir/main.cpp.o \
   CMakeFiles/quant_engine.dir/Calib_cost.cpp.o \
   CMakeFiles/quant_engine.dir/Nelder_Meadsolver.cpp.o \
+  CMakeFiles/quant_engine.dir/Risk_calc.cpp.o \
   /usr/lib/gcc/x86_64-linux-gnu/15/libgomp.so \
   /usr/lib/x86_64-linux-gnu/libpthread.a \
   /usr/lib/gcc/x86_64-linux-gnu/15/libstdc++.so \
@@ -46,6 +47,8 @@ CMakeFiles/quant_engine.dir/main.cpp.o:
 CMakeFiles/quant_engine.dir/Calib_cost.cpp.o:
 
 CMakeFiles/quant_engine.dir/Nelder_Meadsolver.cpp.o:
+
+CMakeFiles/quant_engine.dir/Risk_calc.cpp.o:
 
 /usr/lib/gcc/x86_64-linux-gnu/15/libgomp.so:
 

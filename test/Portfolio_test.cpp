@@ -7,7 +7,7 @@
 
 class MockModel {
 public:
-    std::vector<std::vector<double>> simulate_paths(double maturity, std::size_t num_steps, std::mt19937_64& rng) const {
+    std::vector<std::vector<double>> simulate_paths([[maybe_unused]] double maturity, [[maybe_unused]] std::size_t num_steps, [[maybe_unused]] std::mt19937_64& rng) const {
 
         return {
             {100.0},

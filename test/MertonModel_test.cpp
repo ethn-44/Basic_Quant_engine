@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <vector>
 #include <random>
-#include "MertonModel.hpp"
+#include "Merton.hpp"
 
 TEST(MertonModelTest, ConstructorAndGetters) {
     MertonModel model(100.0, 0.05, 0.2, 0.75, -0.1, 0.2);

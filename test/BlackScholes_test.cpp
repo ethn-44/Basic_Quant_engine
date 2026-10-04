@@ -2,7 +2,7 @@
 #include <vector>
 #include <random>
 #include <cmath>
-#include "BlackScholesModel.hpp"
+#include "BlackScholes.hpp"
 
 TEST(BlackScholesModelTest, ConstructorAndGetters) {
     BlackScholesModel model(100.0, 0.05, 0.2);

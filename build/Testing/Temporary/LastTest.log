@@ -1,3 +1,948 @@
-Start testing: Oct 04 16:32 CEST
+Start testing: Oct 04 16:55 CEST
 ----------------------------------------------------------
-End testing: Oct 04 16:32 CEST
+1/35 Testing: BlackScholesModelTest.ConstructorAndGetters
+1/35 Test: BlackScholesModelTest.ConstructorAndGetters
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=BlackScholesModelTest.ConstructorAndGetters" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"BlackScholesModelTest.ConstructorAndGetters" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BlackScholesModelTest.ConstructorAndGetters
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BlackScholesModelTest
+[ RUN      ] BlackScholesModelTest.ConstructorAndGetters
+[       OK ] BlackScholesModelTest.ConstructorAndGetters (0 ms)
+[----------] 1 test from BlackScholesModelTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BlackScholesModelTest.ConstructorAndGetters" end time: Oct 04 16:55 CEST
+"BlackScholesModelTest.ConstructorAndGetters" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/35 Testing: BlackScholesModelTest.SpotAtMaturityCalculation
+2/35 Test: BlackScholesModelTest.SpotAtMaturityCalculation
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=BlackScholesModelTest.SpotAtMaturityCalculation" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"BlackScholesModelTest.SpotAtMaturityCalculation" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BlackScholesModelTest.SpotAtMaturityCalculation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BlackScholesModelTest
+[ RUN      ] BlackScholesModelTest.SpotAtMaturityCalculation
+[       OK ] BlackScholesModelTest.SpotAtMaturityCalculation (0 ms)
+[----------] 1 test from BlackScholesModelTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BlackScholesModelTest.SpotAtMaturityCalculation" end time: Oct 04 16:55 CEST
+"BlackScholesModelTest.SpotAtMaturityCalculation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/35 Testing: BlackScholesModelTest.WithMethodsReturnNewModifiedModel
+3/35 Test: BlackScholesModelTest.WithMethodsReturnNewModifiedModel
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=BlackScholesModelTest.WithMethodsReturnNewModifiedModel" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"BlackScholesModelTest.WithMethodsReturnNewModifiedModel" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BlackScholesModelTest.WithMethodsReturnNewModifiedModel
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BlackScholesModelTest
+[ RUN      ] BlackScholesModelTest.WithMethodsReturnNewModifiedModel
+[       OK ] BlackScholesModelTest.WithMethodsReturnNewModifiedModel (0 ms)
+[----------] 1 test from BlackScholesModelTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BlackScholesModelTest.WithMethodsReturnNewModifiedModel" end time: Oct 04 16:55 CEST
+"BlackScholesModelTest.WithMethodsReturnNewModifiedModel" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/35 Testing: BlackScholesModelTest.GeneratePathSizeAndInitialValue
+4/35 Test: BlackScholesModelTest.GeneratePathSizeAndInitialValue
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=BlackScholesModelTest.GeneratePathSizeAndInitialValue" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"BlackScholesModelTest.GeneratePathSizeAndInitialValue" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = BlackScholesModelTest.GeneratePathSizeAndInitialValue
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BlackScholesModelTest
+[ RUN      ] BlackScholesModelTest.GeneratePathSizeAndInitialValue
+[       OK ] BlackScholesModelTest.GeneratePathSizeAndInitialValue (0 ms)
+[----------] 1 test from BlackScholesModelTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BlackScholesModelTest.GeneratePathSizeAndInitialValue" end time: Oct 04 16:55 CEST
+"BlackScholesModelTest.GeneratePathSizeAndInitialValue" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/35 Testing: CalibrationObjectiveTest.OperatorReturnsPenaltyForInvalidConstraints
+5/35 Test: CalibrationObjectiveTest.OperatorReturnsPenaltyForInvalidConstraints
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=CalibrationObjectiveTest.OperatorReturnsPenaltyForInvalidConstraints" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"CalibrationObjectiveTest.OperatorReturnsPenaltyForInvalidConstraints" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = CalibrationObjectiveTest.OperatorReturnsPenaltyForInvalidConstraints
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from CalibrationObjectiveTest
+[ RUN      ] CalibrationObjectiveTest.OperatorReturnsPenaltyForInvalidConstraints
+[       OK ] CalibrationObjectiveTest.OperatorReturnsPenaltyForInvalidConstraints (0 ms)
+[----------] 1 test from CalibrationObjectiveTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"CalibrationObjectiveTest.OperatorReturnsPenaltyForInvalidConstraints" end time: Oct 04 16:55 CEST
+"CalibrationObjectiveTest.OperatorReturnsPenaltyForInvalidConstraints" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/35 Testing: HestonModelTest.ConstructorAndGetters
+6/35 Test: HestonModelTest.ConstructorAndGetters
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=HestonModelTest.ConstructorAndGetters" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"HestonModelTest.ConstructorAndGetters" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HestonModelTest.ConstructorAndGetters
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HestonModelTest
+[ RUN      ] HestonModelTest.ConstructorAndGetters
+[       OK ] HestonModelTest.ConstructorAndGetters (0 ms)
+[----------] 1 test from HestonModelTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HestonModelTest.ConstructorAndGetters" end time: Oct 04 16:55 CEST
+"HestonModelTest.ConstructorAndGetters" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/35 Testing: HestonModelTest.WithMethodsReturnNewModifiedModel
+7/35 Test: HestonModelTest.WithMethodsReturnNewModifiedModel
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=HestonModelTest.WithMethodsReturnNewModifiedModel" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"HestonModelTest.WithMethodsReturnNewModifiedModel" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HestonModelTest.WithMethodsReturnNewModifiedModel
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HestonModelTest
+[ RUN      ] HestonModelTest.WithMethodsReturnNewModifiedModel
+[       OK ] HestonModelTest.WithMethodsReturnNewModifiedModel (0 ms)
+[----------] 1 test from HestonModelTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HestonModelTest.WithMethodsReturnNewModifiedModel" end time: Oct 04 16:55 CEST
+"HestonModelTest.WithMethodsReturnNewModifiedModel" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/35 Testing: HestonModelTest.GeneratePathSizeAndInitialValue
+8/35 Test: HestonModelTest.GeneratePathSizeAndInitialValue
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=HestonModelTest.GeneratePathSizeAndInitialValue" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"HestonModelTest.GeneratePathSizeAndInitialValue" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = HestonModelTest.GeneratePathSizeAndInitialValue
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from HestonModelTest
+[ RUN      ] HestonModelTest.GeneratePathSizeAndInitialValue
+[       OK ] HestonModelTest.GeneratePathSizeAndInitialValue (0 ms)
+[----------] 1 test from HestonModelTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"HestonModelTest.GeneratePathSizeAndInitialValue" end time: Oct 04 16:55 CEST
+"HestonModelTest.GeneratePathSizeAndInitialValue" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/35 Testing: MatrixCroutTest.DecompositionOfSimple2x2Matrix
+9/35 Test: MatrixCroutTest.DecompositionOfSimple2x2Matrix
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=MatrixCroutTest.DecompositionOfSimple2x2Matrix" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"MatrixCroutTest.DecompositionOfSimple2x2Matrix" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MatrixCroutTest.DecompositionOfSimple2x2Matrix
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MatrixCroutTest
+[ RUN      ] MatrixCroutTest.DecompositionOfSimple2x2Matrix
+[       OK ] MatrixCroutTest.DecompositionOfSimple2x2Matrix (0 ms)
+[----------] 1 test from MatrixCroutTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MatrixCroutTest.DecompositionOfSimple2x2Matrix" end time: Oct 04 16:55 CEST
+"MatrixCroutTest.DecompositionOfSimple2x2Matrix" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/35 Testing: MertonModelTest.ConstructorAndGetters
+10/35 Test: MertonModelTest.ConstructorAndGetters
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=MertonModelTest.ConstructorAndGetters" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"MertonModelTest.ConstructorAndGetters" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MertonModelTest.ConstructorAndGetters
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MertonModelTest
+[ RUN      ] MertonModelTest.ConstructorAndGetters
+[       OK ] MertonModelTest.ConstructorAndGetters (0 ms)
+[----------] 1 test from MertonModelTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MertonModelTest.ConstructorAndGetters" end time: Oct 04 16:55 CEST
+"MertonModelTest.ConstructorAndGetters" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/35 Testing: MertonModelTest.WithMethodsReturnNewModifiedModel
+11/35 Test: MertonModelTest.WithMethodsReturnNewModifiedModel
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=MertonModelTest.WithMethodsReturnNewModifiedModel" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"MertonModelTest.WithMethodsReturnNewModifiedModel" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MertonModelTest.WithMethodsReturnNewModifiedModel
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MertonModelTest
+[ RUN      ] MertonModelTest.WithMethodsReturnNewModifiedModel
+[       OK ] MertonModelTest.WithMethodsReturnNewModifiedModel (0 ms)
+[----------] 1 test from MertonModelTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MertonModelTest.WithMethodsReturnNewModifiedModel" end time: Oct 04 16:55 CEST
+"MertonModelTest.WithMethodsReturnNewModifiedModel" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/35 Testing: MertonModelTest.GeneratePathSizeAndInitialValue
+12/35 Test: MertonModelTest.GeneratePathSizeAndInitialValue
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=MertonModelTest.GeneratePathSizeAndInitialValue" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"MertonModelTest.GeneratePathSizeAndInitialValue" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MertonModelTest.GeneratePathSizeAndInitialValue
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MertonModelTest
+[ RUN      ] MertonModelTest.GeneratePathSizeAndInitialValue
+[       OK ] MertonModelTest.GeneratePathSizeAndInitialValue (0 ms)
+[----------] 1 test from MertonModelTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MertonModelTest.GeneratePathSizeAndInitialValue" end time: Oct 04 16:55 CEST
+"MertonModelTest.GeneratePathSizeAndInitialValue" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/35 Testing: MonteCarloEngineTest.PriceBlackScholesReturnsValidPrice
+13/35 Test: MonteCarloEngineTest.PriceBlackScholesReturnsValidPrice
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=MonteCarloEngineTest.PriceBlackScholesReturnsValidPrice" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"MonteCarloEngineTest.PriceBlackScholesReturnsValidPrice" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MonteCarloEngineTest.PriceBlackScholesReturnsValidPrice
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MonteCarloEngineTest
+[ RUN      ] MonteCarloEngineTest.PriceBlackScholesReturnsValidPrice
+[       OK ] MonteCarloEngineTest.PriceBlackScholesReturnsValidPrice (7 ms)
+[----------] 1 test from MonteCarloEngineTest (7 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (7 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"MonteCarloEngineTest.PriceBlackScholesReturnsValidPrice" end time: Oct 04 16:55 CEST
+"MonteCarloEngineTest.PriceBlackScholesReturnsValidPrice" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/35 Testing: MonteCarloEngineTest.PricePathDependentReturnsValidPrice
+14/35 Test: MonteCarloEngineTest.PricePathDependentReturnsValidPrice
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=MonteCarloEngineTest.PricePathDependentReturnsValidPrice" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"MonteCarloEngineTest.PricePathDependentReturnsValidPrice" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MonteCarloEngineTest.PricePathDependentReturnsValidPrice
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MonteCarloEngineTest
+[ RUN      ] MonteCarloEngineTest.PricePathDependentReturnsValidPrice
+[       OK ] MonteCarloEngineTest.PricePathDependentReturnsValidPrice (5 ms)
+[----------] 1 test from MonteCarloEngineTest (5 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (5 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"MonteCarloEngineTest.PricePathDependentReturnsValidPrice" end time: Oct 04 16:55 CEST
+"MonteCarloEngineTest.PricePathDependentReturnsValidPrice" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/35 Testing: MonteCarloEngineTest.ExportPathsToCsvCreatesValidFile
+15/35 Test: MonteCarloEngineTest.ExportPathsToCsvCreatesValidFile
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=MonteCarloEngineTest.ExportPathsToCsvCreatesValidFile" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"MonteCarloEngineTest.ExportPathsToCsvCreatesValidFile" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MonteCarloEngineTest.ExportPathsToCsvCreatesValidFile
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MonteCarloEngineTest
+[ RUN      ] MonteCarloEngineTest.ExportPathsToCsvCreatesValidFile
+[       OK ] MonteCarloEngineTest.ExportPathsToCsvCreatesValidFile (0 ms)
+[----------] 1 test from MonteCarloEngineTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MonteCarloEngineTest.ExportPathsToCsvCreatesValidFile" end time: Oct 04 16:55 CEST
+"MonteCarloEngineTest.ExportPathsToCsvCreatesValidFile" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/35 Testing: MultiAssetTest.ConstructorAndGetters
+16/35 Test: MultiAssetTest.ConstructorAndGetters
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=MultiAssetTest.ConstructorAndGetters" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"MultiAssetTest.ConstructorAndGetters" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MultiAssetTest.ConstructorAndGetters
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MultiAssetTest
+[ RUN      ] MultiAssetTest.ConstructorAndGetters
+[       OK ] MultiAssetTest.ConstructorAndGetters (0 ms)
+[----------] 1 test from MultiAssetTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiAssetTest.ConstructorAndGetters" end time: Oct 04 16:55 CEST
+"MultiAssetTest.ConstructorAndGetters" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/35 Testing: MultiAssetTest.PriceAssetsBsReturnsValidMatrix
+17/35 Test: MultiAssetTest.PriceAssetsBsReturnsValidMatrix
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=MultiAssetTest.PriceAssetsBsReturnsValidMatrix" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"MultiAssetTest.PriceAssetsBsReturnsValidMatrix" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MultiAssetTest.PriceAssetsBsReturnsValidMatrix
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MultiAssetTest
+[ RUN      ] MultiAssetTest.PriceAssetsBsReturnsValidMatrix
+[       OK ] MultiAssetTest.PriceAssetsBsReturnsValidMatrix (0 ms)
+[----------] 1 test from MultiAssetTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiAssetTest.PriceAssetsBsReturnsValidMatrix" end time: Oct 04 16:55 CEST
+"MultiAssetTest.PriceAssetsBsReturnsValidMatrix" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/35 Testing: MultiAssetsPayoffTest.EvaluateBasketReturnsCorrectPayoff
+18/35 Test: MultiAssetsPayoffTest.EvaluateBasketReturnsCorrectPayoff
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=MultiAssetsPayoffTest.EvaluateBasketReturnsCorrectPayoff" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"MultiAssetsPayoffTest.EvaluateBasketReturnsCorrectPayoff" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MultiAssetsPayoffTest.EvaluateBasketReturnsCorrectPayoff
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MultiAssetsPayoffTest
+[ RUN      ] MultiAssetsPayoffTest.EvaluateBasketReturnsCorrectPayoff
+[       OK ] MultiAssetsPayoffTest.EvaluateBasketReturnsCorrectPayoff (0 ms)
+[----------] 1 test from MultiAssetsPayoffTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiAssetsPayoffTest.EvaluateBasketReturnsCorrectPayoff" end time: Oct 04 16:55 CEST
+"MultiAssetsPayoffTest.EvaluateBasketReturnsCorrectPayoff" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/35 Testing: MultiAssetsPayoffTest.EvaluateRainbowCallReturnsCorrectPayoff
+19/35 Test: MultiAssetsPayoffTest.EvaluateRainbowCallReturnsCorrectPayoff
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=MultiAssetsPayoffTest.EvaluateRainbowCallReturnsCorrectPayoff" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"MultiAssetsPayoffTest.EvaluateRainbowCallReturnsCorrectPayoff" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MultiAssetsPayoffTest.EvaluateRainbowCallReturnsCorrectPayoff
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MultiAssetsPayoffTest
+[ RUN      ] MultiAssetsPayoffTest.EvaluateRainbowCallReturnsCorrectPayoff
+[       OK ] MultiAssetsPayoffTest.EvaluateRainbowCallReturnsCorrectPayoff (0 ms)
+[----------] 1 test from MultiAssetsPayoffTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiAssetsPayoffTest.EvaluateRainbowCallReturnsCorrectPayoff" end time: Oct 04 16:55 CEST
+"MultiAssetsPayoffTest.EvaluateRainbowCallReturnsCorrectPayoff" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/35 Testing: NelderMeadSolverTest.ReflectCalculatesCorrectPoint
+20/35 Test: NelderMeadSolverTest.ReflectCalculatesCorrectPoint
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=NelderMeadSolverTest.ReflectCalculatesCorrectPoint" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"NelderMeadSolverTest.ReflectCalculatesCorrectPoint" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NelderMeadSolverTest.ReflectCalculatesCorrectPoint
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NelderMeadSolverTest
+[ RUN      ] NelderMeadSolverTest.ReflectCalculatesCorrectPoint
+[       OK ] NelderMeadSolverTest.ReflectCalculatesCorrectPoint (0 ms)
+[----------] 1 test from NelderMeadSolverTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NelderMeadSolverTest.ReflectCalculatesCorrectPoint" end time: Oct 04 16:55 CEST
+"NelderMeadSolverTest.ReflectCalculatesCorrectPoint" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/35 Testing: NelderMeadSolverTest.SortSimplexOrdersByCost
+21/35 Test: NelderMeadSolverTest.SortSimplexOrdersByCost
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=NelderMeadSolverTest.SortSimplexOrdersByCost" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"NelderMeadSolverTest.SortSimplexOrdersByCost" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = NelderMeadSolverTest.SortSimplexOrdersByCost
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NelderMeadSolverTest
+[ RUN      ] NelderMeadSolverTest.SortSimplexOrdersByCost
+[       OK ] NelderMeadSolverTest.SortSimplexOrdersByCost (0 ms)
+[----------] 1 test from NelderMeadSolverTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"NelderMeadSolverTest.SortSimplexOrdersByCost" end time: Oct 04 16:55 CEST
+"NelderMeadSolverTest.SortSimplexOrdersByCost" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/35 Testing: PathPayoffTest.AsianCallPayoffCalculatesAverageCorrectly
+22/35 Test: PathPayoffTest.AsianCallPayoffCalculatesAverageCorrectly
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=PathPayoffTest.AsianCallPayoffCalculatesAverageCorrectly" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"PathPayoffTest.AsianCallPayoffCalculatesAverageCorrectly" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PathPayoffTest.AsianCallPayoffCalculatesAverageCorrectly
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PathPayoffTest
+[ RUN      ] PathPayoffTest.AsianCallPayoffCalculatesAverageCorrectly
+[       OK ] PathPayoffTest.AsianCallPayoffCalculatesAverageCorrectly (0 ms)
+[----------] 1 test from PathPayoffTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PathPayoffTest.AsianCallPayoffCalculatesAverageCorrectly" end time: Oct 04 16:55 CEST
+"PathPayoffTest.AsianCallPayoffCalculatesAverageCorrectly" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/35 Testing: PathPayoffTest.BarrierUpAndOutCallTriggersKnockOut
+23/35 Test: PathPayoffTest.BarrierUpAndOutCallTriggersKnockOut
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=PathPayoffTest.BarrierUpAndOutCallTriggersKnockOut" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"PathPayoffTest.BarrierUpAndOutCallTriggersKnockOut" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PathPayoffTest.BarrierUpAndOutCallTriggersKnockOut
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PathPayoffTest
+[ RUN      ] PathPayoffTest.BarrierUpAndOutCallTriggersKnockOut
+[       OK ] PathPayoffTest.BarrierUpAndOutCallTriggersKnockOut (0 ms)
+[----------] 1 test from PathPayoffTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PathPayoffTest.BarrierUpAndOutCallTriggersKnockOut" end time: Oct 04 16:55 CEST
+"PathPayoffTest.BarrierUpAndOutCallTriggersKnockOut" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/35 Testing: PathPayoffTest.BarrierUpAndOutCallSurvivesAndPaysOff
+24/35 Test: PathPayoffTest.BarrierUpAndOutCallSurvivesAndPaysOff
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=PathPayoffTest.BarrierUpAndOutCallSurvivesAndPaysOff" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"PathPayoffTest.BarrierUpAndOutCallSurvivesAndPaysOff" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PathPayoffTest.BarrierUpAndOutCallSurvivesAndPaysOff
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PathPayoffTest
+[ RUN      ] PathPayoffTest.BarrierUpAndOutCallSurvivesAndPaysOff
+[       OK ] PathPayoffTest.BarrierUpAndOutCallSurvivesAndPaysOff (0 ms)
+[----------] 1 test from PathPayoffTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PathPayoffTest.BarrierUpAndOutCallSurvivesAndPaysOff" end time: Oct 04 16:55 CEST
+"PathPayoffTest.BarrierUpAndOutCallSurvivesAndPaysOff" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/35 Testing: PayoffCallTest.SpotAboveStrikeReturnsPositivePayoff
+25/35 Test: PayoffCallTest.SpotAboveStrikeReturnsPositivePayoff
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=PayoffCallTest.SpotAboveStrikeReturnsPositivePayoff" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"PayoffCallTest.SpotAboveStrikeReturnsPositivePayoff" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PayoffCallTest.SpotAboveStrikeReturnsPositivePayoff
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PayoffCallTest
+[ RUN      ] PayoffCallTest.SpotAboveStrikeReturnsPositivePayoff
+[       OK ] PayoffCallTest.SpotAboveStrikeReturnsPositivePayoff (0 ms)
+[----------] 1 test from PayoffCallTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PayoffCallTest.SpotAboveStrikeReturnsPositivePayoff" end time: Oct 04 16:55 CEST
+"PayoffCallTest.SpotAboveStrikeReturnsPositivePayoff" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/35 Testing: PayoffCallTest.SpotBelowStrikeReturnsZero
+26/35 Test: PayoffCallTest.SpotBelowStrikeReturnsZero
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=PayoffCallTest.SpotBelowStrikeReturnsZero" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"PayoffCallTest.SpotBelowStrikeReturnsZero" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PayoffCallTest.SpotBelowStrikeReturnsZero
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PayoffCallTest
+[ RUN      ] PayoffCallTest.SpotBelowStrikeReturnsZero
+[       OK ] PayoffCallTest.SpotBelowStrikeReturnsZero (0 ms)
+[----------] 1 test from PayoffCallTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PayoffCallTest.SpotBelowStrikeReturnsZero" end time: Oct 04 16:55 CEST
+"PayoffCallTest.SpotBelowStrikeReturnsZero" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/35 Testing: PayoffCallTest.PathBasedOperatorUsesLastElement
+27/35 Test: PayoffCallTest.PathBasedOperatorUsesLastElement
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=PayoffCallTest.PathBasedOperatorUsesLastElement" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"PayoffCallTest.PathBasedOperatorUsesLastElement" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PayoffCallTest.PathBasedOperatorUsesLastElement
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PayoffCallTest
+[ RUN      ] PayoffCallTest.PathBasedOperatorUsesLastElement
+[       OK ] PayoffCallTest.PathBasedOperatorUsesLastElement (0 ms)
+[----------] 1 test from PayoffCallTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PayoffCallTest.PathBasedOperatorUsesLastElement" end time: Oct 04 16:55 CEST
+"PayoffCallTest.PathBasedOperatorUsesLastElement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/35 Testing: PayoffPutTest.SpotBelowStrikeReturnsPositivePayoff
+28/35 Test: PayoffPutTest.SpotBelowStrikeReturnsPositivePayoff
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=PayoffPutTest.SpotBelowStrikeReturnsPositivePayoff" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"PayoffPutTest.SpotBelowStrikeReturnsPositivePayoff" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PayoffPutTest.SpotBelowStrikeReturnsPositivePayoff
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PayoffPutTest
+[ RUN      ] PayoffPutTest.SpotBelowStrikeReturnsPositivePayoff
+[       OK ] PayoffPutTest.SpotBelowStrikeReturnsPositivePayoff (0 ms)
+[----------] 1 test from PayoffPutTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PayoffPutTest.SpotBelowStrikeReturnsPositivePayoff" end time: Oct 04 16:55 CEST
+"PayoffPutTest.SpotBelowStrikeReturnsPositivePayoff" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/35 Testing: PayoffPutTest.SpotAboveStrikeReturnsZero
+29/35 Test: PayoffPutTest.SpotAboveStrikeReturnsZero
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=PayoffPutTest.SpotAboveStrikeReturnsZero" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"PayoffPutTest.SpotAboveStrikeReturnsZero" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PayoffPutTest.SpotAboveStrikeReturnsZero
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PayoffPutTest
+[ RUN      ] PayoffPutTest.SpotAboveStrikeReturnsZero
+[       OK ] PayoffPutTest.SpotAboveStrikeReturnsZero (0 ms)
+[----------] 1 test from PayoffPutTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PayoffPutTest.SpotAboveStrikeReturnsZero" end time: Oct 04 16:55 CEST
+"PayoffPutTest.SpotAboveStrikeReturnsZero" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/35 Testing: PayoffPutTest.PathBasedOperatorUsesLastElement
+30/35 Test: PayoffPutTest.PathBasedOperatorUsesLastElement
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=PayoffPutTest.PathBasedOperatorUsesLastElement" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"PayoffPutTest.PathBasedOperatorUsesLastElement" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PayoffPutTest.PathBasedOperatorUsesLastElement
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PayoffPutTest
+[ RUN      ] PayoffPutTest.PathBasedOperatorUsesLastElement
+[       OK ] PayoffPutTest.PathBasedOperatorUsesLastElement (0 ms)
+[----------] 1 test from PayoffPutTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PayoffPutTest.PathBasedOperatorUsesLastElement" end time: Oct 04 16:55 CEST
+"PayoffPutTest.PathBasedOperatorUsesLastElement" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/35 Testing: PortfolioTest.AddPositionAndGetMaxMaturity
+31/35 Test: PortfolioTest.AddPositionAndGetMaxMaturity
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=PortfolioTest.AddPositionAndGetMaxMaturity" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"PortfolioTest.AddPositionAndGetMaxMaturity" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PortfolioTest.AddPositionAndGetMaxMaturity
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PortfolioTest
+[ RUN      ] PortfolioTest.AddPositionAndGetMaxMaturity
+[       OK ] PortfolioTest.AddPositionAndGetMaxMaturity (0 ms)
+[----------] 1 test from PortfolioTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PortfolioTest.AddPositionAndGetMaxMaturity" end time: Oct 04 16:55 CEST
+"PortfolioTest.AddPositionAndGetMaxMaturity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/35 Testing: PortfolioTest.EvaluatePortfolioRiskReturnsValues
+32/35 Test: PortfolioTest.EvaluatePortfolioRiskReturnsValues
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=PortfolioTest.EvaluatePortfolioRiskReturnsValues" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"PortfolioTest.EvaluatePortfolioRiskReturnsValues" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = PortfolioTest.EvaluatePortfolioRiskReturnsValues
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from PortfolioTest
+[ RUN      ] PortfolioTest.EvaluatePortfolioRiskReturnsValues
+[       OK ] PortfolioTest.EvaluatePortfolioRiskReturnsValues (0 ms)
+[----------] 1 test from PortfolioTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PortfolioTest.EvaluatePortfolioRiskReturnsValues" end time: Oct 04 16:55 CEST
+"PortfolioTest.EvaluatePortfolioRiskReturnsValues" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/35 Testing: RiskCalcTest.CalculateRiskMetricsReturnsCorrectValues
+33/35 Test: RiskCalcTest.CalculateRiskMetricsReturnsCorrectValues
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=RiskCalcTest.CalculateRiskMetricsReturnsCorrectValues" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"RiskCalcTest.CalculateRiskMetricsReturnsCorrectValues" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = RiskCalcTest.CalculateRiskMetricsReturnsCorrectValues
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RiskCalcTest
+[ RUN      ] RiskCalcTest.CalculateRiskMetricsReturnsCorrectValues
+[       OK ] RiskCalcTest.CalculateRiskMetricsReturnsCorrectValues (0 ms)
+[----------] 1 test from RiskCalcTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RiskCalcTest.CalculateRiskMetricsReturnsCorrectValues" end time: Oct 04 16:55 CEST
+"RiskCalcTest.CalculateRiskMetricsReturnsCorrectValues" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/35 Testing: RegTest.BasisFunctionsEvaluation
+34/35 Test: RegTest.BasisFunctionsEvaluation
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=RegTest.BasisFunctionsEvaluation" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"RegTest.BasisFunctionsEvaluation" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = RegTest.BasisFunctionsEvaluation
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RegTest
+[ RUN      ] RegTest.BasisFunctionsEvaluation
+[       OK ] RegTest.BasisFunctionsEvaluation (0 ms)
+[----------] 1 test from RegTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RegTest.BasisFunctionsEvaluation" end time: Oct 04 16:55 CEST
+"RegTest.BasisFunctionsEvaluation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/35 Testing: RegTest.RegressionAndPredictionReturnsCoefficients
+35/35 Test: RegTest.RegressionAndPredictionReturnsCoefficients
+Command: "/home/ethan/projects/quant-engine-cpp/build/unit_tests" "--gtest_filter=RegTest.RegressionAndPredictionReturnsCoefficients" "--gtest_also_run_disabled_tests"
+Directory: /home/ethan/projects/quant-engine-cpp/build
+"RegTest.RegressionAndPredictionReturnsCoefficients" start time: Oct 04 16:55 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/ethan/projects/quant-engine-cpp/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = RegTest.RegressionAndPredictionReturnsCoefficients
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from RegTest
+[ RUN      ] RegTest.RegressionAndPredictionReturnsCoefficients
+[       OK ] RegTest.RegressionAndPredictionReturnsCoefficients (6 ms)
+[----------] 1 test from RegTest (6 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (7 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"RegTest.RegressionAndPredictionReturnsCoefficients" end time: Oct 04 16:55 CEST
+"RegTest.RegressionAndPredictionReturnsCoefficients" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 04 16:55 CEST
