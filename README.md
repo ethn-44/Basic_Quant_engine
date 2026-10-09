@@ -24,7 +24,7 @@ High-performance C++ (OpenMP) multi-asset quantitative engine featuring Monte Ca
   - Parallelized simulations using OpenMP (`omp.h`).
 ---
 - **Data Visualization**:
-- Simulation performed with a non-zero risk (rate>0)
+- Simulation performed with a non-zero risk rate (rate>0)
 ![Monte Carlo Simulation Paths](monte_carlo_paths.png)
 ##  Project Structure
 
