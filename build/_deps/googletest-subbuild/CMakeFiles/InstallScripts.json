@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/ethan/projects/quant-engine-cpp/build/_deps/googletest-subbuild/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
